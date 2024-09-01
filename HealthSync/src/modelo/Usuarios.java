@@ -75,7 +75,7 @@ public class Usuarios {
         }
     }
     
-    public boolean iniciarSesion(){
+    public boolean iniciarSesionCredenciales(){
         Connection conexion = ClaseConexion.getConexion();
         boolean resultadodelInicioSesion = false;
         

@@ -1,4 +1,3 @@
-
 package vista;
 
 import controlador.ctrlinicioSesion;
@@ -85,8 +84,12 @@ public class bienvenida extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Contraseña");
 
-        txtCorreoUsuario.setEditable(false);
         txtCorreoUsuario.setBackground(new java.awt.Color(221, 221, 221));
+        txtCorreoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreoUsuarioActionPerformed(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Fitness stats-pana 1.jpg"))); // NOI18N
         jLabel6.setMaximumSize(new java.awt.Dimension(600, 879));
@@ -200,6 +203,10 @@ public class bienvenida extends javax.swing.JFrame {
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarseActionPerformed
+
+    private void txtCorreoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
