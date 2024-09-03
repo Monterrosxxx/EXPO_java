@@ -4,6 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import modelo.Usuarios;
+import static vista.FrmCorreodeRecuperacion.initCorreodeRecuperacion;
 import static vista.Registrarse.initRegistrarse;
 import vista.bienvenida;
 
@@ -18,6 +19,7 @@ public class ctrlinicioSesion implements MouseListener{
         
         vista.btnRegistrarse.addMouseListener(this);
         vista.btnIniciarSesion.addMouseListener(this);
+        vista.btnRecuperarContrasena.addMouseListener(this);
         
     }
 
@@ -51,6 +53,11 @@ public class ctrlinicioSesion implements MouseListener{
         }
         if(e.getSource() == vista.btnRegistrarse){
             initRegistrarse();
+            vista.dispose();
+        }
+        
+        if(e.getSource() == vista.btnRecuperarContrasena){
+            initCorreodeRecuperacion();
             vista.dispose();
         }
         
