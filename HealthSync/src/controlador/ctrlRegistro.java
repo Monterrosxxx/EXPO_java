@@ -7,9 +7,7 @@ import modelo.Usuarios;
 import vista.Registrarse;
 import static vista.bienvenida.initBienvenida;
 
-
-
-public class ctrlRegistro implements MouseListener{
+public class ctrlRegistro implements MouseListener {
     
     Usuarios modelo;
     Registrarse vista;
@@ -40,6 +38,12 @@ public class ctrlRegistro implements MouseListener{
         // Que la contraseña tenga más de 6 caracteres
         if (vista.txtContrasenaRegistro.getText().length() < 6) {
             JOptionPane.showMessageDialog(vista, "Contraseña inválida: debe contener mínimo 6 caracteres");
+            return;
+        }
+        
+        // Nueva validación: Comparar contraseña con la confirmación
+        if (!vista.txtContrasenaRegistro.getText().equals(vista.txtConfirmarContrasena.getText())) {
+            JOptionPane.showMessageDialog(vista, "La confirmación de contraseña debe coincidir con la contraseña");
             return;
         }
         
@@ -74,6 +78,5 @@ public class ctrlRegistro implements MouseListener{
     @Override
     public void mouseExited(MouseEvent e) {
     }
-
     
 }

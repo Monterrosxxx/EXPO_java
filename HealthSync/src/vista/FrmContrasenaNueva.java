@@ -4,17 +4,28 @@
  */
 package vista;
 
+import controlador.ctrlContrasenaNueva;
+import modelo.Usuarios;
+
 /**
  *
  * @author djpoc
  */
-public class Correo_de_recuperacion extends javax.swing.JFrame {
+public class FrmContrasenaNueva extends javax.swing.JFrame {
 
     /**
-     * Creates new form Correo_de_recuperacion
+     * Creates new form Contraseña_nueva
      */
-    public Correo_de_recuperacion() {
+    public FrmContrasenaNueva() {
         initComponents();
+    }
+    
+    public static void initContrasenaNueva(){
+        Usuarios modelo = new Usuarios();
+        FrmContrasenaNueva vista = new FrmContrasenaNueva();
+        ctrlContrasenaNueva controlador = new ctrlContrasenaNueva(modelo, vista);
+        
+        vista.setVisible(true);
     }
 
     /**
@@ -28,8 +39,10 @@ public class Correo_de_recuperacion extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        txtContrasenaNueva = new javax.swing.JTextField();
+        btnConfirmarContrairLogin = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,52 +50,62 @@ public class Correo_de_recuperacion extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Ingrese su correo");
+        jLabel1.setText("Ingrese su nueva contraseña");
 
-        jButton1.setBackground(new java.awt.Color(118, 99, 242));
-        jButton1.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        jButton1.setText("Continuar");
+        txtContrasenaNueva.setBackground(new java.awt.Color(221, 221, 221));
 
-        jTextField1.setBackground(new java.awt.Color(221, 221, 221));
+        btnConfirmarContrairLogin.setBackground(new java.awt.Color(118, 99, 242));
+        btnConfirmarContrairLogin.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnConfirmarContrairLogin.setText("Confirmar ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(226, 226, 226))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(277, 277, 277)
-                        .addComponent(jLabel1))
+                        .addGap(366, 366, 366)
+                        .addComponent(btnConfirmarContrairLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(363, 363, 363)
-                        .addComponent(jButton1))
+                        .addGap(222, 222, 222)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(153, Short.MAX_VALUE))
+                        .addGap(196, 196, 196)
+                        .addComponent(txtContrasenaNueva, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(123, 123, 123)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(jButton1)
-                .addGap(236, 236, 236))
+                .addGap(67, 67, 67)
+                .addComponent(jLabel2)
+                .addGap(66, 66, 66)
+                .addComponent(txtContrasenaNueva, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78)
+                .addComponent(btnConfirmarContrairLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel3)
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -105,28 +128,31 @@ public class Correo_de_recuperacion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Correo_de_recuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContrasenaNueva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Correo_de_recuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContrasenaNueva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Correo_de_recuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContrasenaNueva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Correo_de_recuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmContrasenaNueva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Correo_de_recuperacion().setVisible(true);
+                initContrasenaNueva();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnConfirmarContrairLogin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField txtContrasenaNueva;
     // End of variables declaration//GEN-END:variables
 }

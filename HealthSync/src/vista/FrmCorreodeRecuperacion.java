@@ -1,20 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package vista;
 
-/**
- *
- * @author djpoc
- */
-public class Codigo_de_vereficación extends javax.swing.JFrame {
+import controlador.ctrlCorreoRecuperacion;
 
-    /**
-     * Creates new form Codigo_de_vereficación
-     */
-    public Codigo_de_vereficación() {
+public class FrmCorreodeRecuperacion extends javax.swing.JFrame {
+
+    public FrmCorreodeRecuperacion() {
         initComponents();
+    }
+    
+    public static void initCorreodeRecuperacion(){
+        FrmCorreodeRecuperacion vista = new FrmCorreodeRecuperacion();
+        ctrlCorreoRecuperacion controlador = new ctrlCorreoRecuperacion(vista);
+        
+        vista.setVisible(true);
     }
 
     /**
@@ -28,8 +26,8 @@ public class Codigo_de_vereficación extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnContinuarCodVeri = new javax.swing.JButton();
+        txtCorreoRecuperacion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,51 +35,52 @@ public class Codigo_de_vereficación extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Ingrese su código de verificación");
+        jLabel1.setText("Ingrese su correo");
 
-        jTextField1.setBackground(new java.awt.Color(221, 221, 221));
+        btnContinuarCodVeri.setBackground(new java.awt.Color(118, 99, 242));
+        btnContinuarCodVeri.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnContinuarCodVeri.setText("Continuar");
 
-        jButton1.setBackground(new java.awt.Color(118, 99, 242));
-        jButton1.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        jButton1.setText("Continuar");
+        txtCorreoRecuperacion.setBackground(new java.awt.Color(221, 221, 221));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(168, 168, 168)
-                            .addComponent(jLabel1))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(349, 349, 349)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(277, 277, 277)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(363, 363, 363)
+                        .addComponent(btnContinuarCodVeri))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(126, 126, 126)
+                .addGap(105, 105, 105)
                 .addComponent(jLabel1)
-                .addGap(127, 127, 127)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addComponent(btnContinuarCodVeri)
+                .addGap(236, 236, 236))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -104,28 +103,29 @@ public class Codigo_de_vereficación extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Codigo_de_vereficación.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCorreodeRecuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Codigo_de_vereficación.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCorreodeRecuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Codigo_de_vereficación.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCorreodeRecuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Codigo_de_vereficación.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCorreodeRecuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Codigo_de_vereficación().setVisible(true);
+                initCorreodeRecuperacion();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnContinuarCodVeri;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField txtCorreoRecuperacion;
     // End of variables declaration//GEN-END:variables
 }
