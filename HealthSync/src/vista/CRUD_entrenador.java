@@ -92,9 +92,11 @@ public class CRUD_entrenador extends javax.swing.JFrame {
         jTextField4.setBackground(new java.awt.Color(221, 221, 221));
 
         jButton2.setBackground(new java.awt.Color(118, 99, 242));
+        jButton2.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jButton2.setText("Agregar");
 
         jButton3.setBackground(new java.awt.Color(118, 99, 242));
+        jButton3.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jButton3.setText("Editar");
 
         jButton4.setBackground(new java.awt.Color(118, 99, 242));
@@ -113,12 +115,12 @@ public class CRUD_entrenador extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(146, 146, 146)
-                        .addComponent(jButton2)
-                        .addGap(86, 86, 86)
-                        .addComponent(jButton3)
-                        .addGap(91, 91, 91)
-                        .addComponent(jButton4))
+                        .addGap(139, 139, 139)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(251, 251, 251)
                         .addComponent(jLabel1))
@@ -135,7 +137,7 @@ public class CRUD_entrenador extends javax.swing.JFrame {
                             .addComponent(jTextField3)
                             .addComponent(jTextField4)
                             .addComponent(jSpinner1))))
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,14 +164,17 @@ public class CRUD_entrenador extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2)
-                        .addComponent(jButton3)
-                        .addComponent(jButton4)))
-                .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
