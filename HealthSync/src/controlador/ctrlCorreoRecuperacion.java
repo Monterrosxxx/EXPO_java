@@ -5,6 +5,7 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 import vista.FrmCorreodeRecuperacion;
 import modelo.envioCorreos;
+import modelo.Usuarios;
 import static vista.FrmCodigoVerificación.initCodigoVerificacion;
 
 public class ctrlCorreoRecuperacion implements MouseListener {
@@ -26,13 +27,16 @@ public class ctrlCorreoRecuperacion implements MouseListener {
                 return;
             }
             
+            String correoRecuperacion = vista.txtCorreoRecuperacion.getText();
+            Usuarios.setCorreoRecuperacion(correoRecuperacion); // Guardamos el correo para la recuperación
+            
             Random random = new Random();
             
             // Genera un número aleatorio de 4 dígitos (1000 a 9999)
             int numeroAleatorio = 1000 + random.nextInt(9000);
             codigoGenerado = String.valueOf(numeroAleatorio); // Almacena el código generado
             
-            String recipient = vista.txtCorreoRecuperacion.getText();
+            String recipient = correoRecuperacion;
             String subject = "Recuperación de contraseña";
             envioCorreos.enviarCorreo(recipient, subject, codigoGenerado);
             

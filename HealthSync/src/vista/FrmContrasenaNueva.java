@@ -4,6 +4,9 @@
  */
 package vista;
 
+import controlador.ctrlContrasenaNueva;
+import modelo.Usuarios;
+
 /**
  *
  * @author djpoc
@@ -15,6 +18,14 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
      */
     public FrmContrasenaNueva() {
         initComponents();
+    }
+    
+    public static void initContrasenaNueva(){
+        Usuarios modelo = new Usuarios();
+        FrmContrasenaNueva vista = new FrmContrasenaNueva();
+        ctrlContrasenaNueva controlador = new ctrlContrasenaNueva(modelo, vista);
+        
+        vista.setVisible(true);
     }
 
     /**
@@ -131,7 +142,7 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmContrasenaNueva().setVisible(true);
+                initContrasenaNueva();
             }
         });
     }

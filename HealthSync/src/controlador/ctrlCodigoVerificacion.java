@@ -6,6 +6,7 @@ import vista.FrmCodigoVerificación;
 import javax.swing.text.PlainDocument;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
+import static vista.FrmContrasenaNueva.initContrasenaNueva;
 
 public class ctrlCodigoVerificacion implements MouseListener {
     
@@ -36,7 +37,10 @@ public class ctrlCodigoVerificacion implements MouseListener {
             String codigoIngresado = vista.txtCodigoVerificacion.getText();
             if(codigoIngresado.equals(ctrlCorreoRecuperacion.codigoGenerado)){
                 JOptionPane.showMessageDialog(vista, "Código válido");
-                // Aquí puedes agregar el código para continuar con el siguiente paso
+                
+                initContrasenaNueva();
+                vista.dispose();
+                
             } else {
                 JOptionPane.showMessageDialog(vista, "ERROR: Código de verificación incorrecto", "Error", JOptionPane.ERROR_MESSAGE);
             }

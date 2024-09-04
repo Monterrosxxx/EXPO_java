@@ -8,6 +8,7 @@ public class Usuarios {
     private String correo;
     private String clave;
     private String nombre;
+    private static String correoRecuperacion;
 
     public String getCorreo() {
         return correo;
@@ -32,8 +33,16 @@ public class Usuarios {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public static void setCorreoRecuperacion(String correo) {
+        correoRecuperacion = correo;
+    }
+
+    public static String getCorreoRecuperacion() {
+        return correoRecuperacion;
+    }
     
-    public String convertirSHA256(String password) {
+    public static String convertirSHA256(String password) {
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("SHA-256");
@@ -94,5 +103,29 @@ public class Usuarios {
             System.out.println("Error en el modelo: método iniciarSesion " + ex);
         }
         return resultadodelInicioSesion;
+    }
+    
+    public static boolean actualizarContrasena(String nuevaContrasena) {
+        Connection conexion = ClaseConexion.getConexion();
+        boolean actualizacionExitosa = false;
+        
+        try {
+            String sql = "UPDATE Usuarios SET clave = ? WHERE correo = ?";
+            PreparedStatement statement = conexion.prepareStatement(sql);
+            statement.setString(1, convertirSHA256(nuevaContrasena));
+            statement.setString(2, correoRecuperacion);
+            
+            int filasActualizadas = statement.executeUpdate();
+            
+            if (filasActualizadas > 0) {
+                System.out.println("Contraseña actualizada exitosamente.");
+                actualizacionExitosa = true;
+            } else {
+                System.out.println("No se pudo actualizar la contraseña. Usuario no encontrado.");
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error en el modelo: método actualizarContrasena " + ex);
+        }
+        return actualizacionExitosa;
     }
 }
