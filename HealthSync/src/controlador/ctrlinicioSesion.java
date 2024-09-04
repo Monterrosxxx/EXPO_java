@@ -5,6 +5,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import modelo.Usuarios;
 import static vista.FrmCorreodeRecuperacion.initCorreodeRecuperacion;
+import static vista.FrmInicio.initInicio;
 import static vista.Registrarse.initRegistrarse;
 import vista.bienvenida;
 
@@ -50,6 +51,8 @@ public class ctrlinicioSesion implements MouseListener{
             } else {
                 JOptionPane.showMessageDialog(vista, "Usuario no encontrado");
             }
+                 initInicio();
+                 vista.dispose();  
         }
         if(e.getSource() == vista.btnRegistrarse){
             initRegistrarse();

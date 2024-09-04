@@ -4,6 +4,8 @@
  */
 package vista;
 
+import controlador.ctrlInicio;
+
 /**
  *
  * @author djpoc
@@ -16,6 +18,13 @@ public class FrmInicio extends javax.swing.JFrame {
     public FrmInicio() {
         initComponents();
     }
+    
+      public static void initInicio(){
+        FrmInicio vista = new FrmInicio();
+        ctrlInicio controlador = new ctrlInicio(vista);
+        
+        vista.setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,146 +35,96 @@ public class FrmInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        btnUsuarios = new javax.swing.JButton();
+        btnEntrenador = new javax.swing.JButton();
+        btnNutricionista = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         jpContenedor = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        btnjpUsuarios = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpContenedor.setBackground(new java.awt.Color(255, 255, 255));
-        jpContenedor.setPreferredSize(new java.awt.Dimension(1500, 776));
+        jPanel1.setBackground(new java.awt.Color(255, 51, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 51, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(210, 203, 236));
-
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("HEALTHSYNC");
-
-        jButton1.setBackground(new java.awt.Color(210, 203, 236));
-        jButton1.setFont(new java.awt.Font("Leelawadee UI", 1, 28)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Administrador");
-
-        jButton2.setBackground(new java.awt.Color(210, 203, 236));
-        jButton2.setFont(new java.awt.Font("Leelawadee UI", 1, 28)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Entrenador");
-
-        jButton3.setBackground(new java.awt.Color(210, 203, 236));
-        jButton3.setFont(new java.awt.Font("Leelawadee UI", 1, 28)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Nutricionista");
-
-        btnjpUsuarios.setBackground(new java.awt.Color(210, 203, 236));
-        btnjpUsuarios.setFont(new java.awt.Font("Leelawadee UI", 1, 28)); // NOI18N
-        btnjpUsuarios.setForeground(new java.awt.Color(0, 0, 0));
-        btnjpUsuarios.setText("Usuario");
-        btnjpUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        btnUsuarios.setBackground(new java.awt.Color(255, 153, 255));
+        btnUsuarios.setForeground(new java.awt.Color(0, 0, 0));
+        btnUsuarios.setText("Usuarios");
+        btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnjpUsuariosActionPerformed(evt);
+                btnUsuariosActionPerformed(evt);
             }
         });
+        jPanel1.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 165, 138, 41));
 
-        jButton5.setBackground(new java.awt.Color(210, 203, 236));
-        jButton5.setFont(new java.awt.Font("Leelawadee UI", 1, 28)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("Cerrar sesion");
+        btnEntrenador.setBackground(new java.awt.Color(255, 153, 255));
+        btnEntrenador.setForeground(new java.awt.Color(0, 0, 0));
+        btnEntrenador.setText("Entrenador");
+        btnEntrenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrenadorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 281, 138, 41));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
-                        .addComponent(btnjpUsuarios))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addComponent(jButton5))
-                            .addComponent(jButton3)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(137, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel1)
-                .addGap(128, 128, 128)
-                .addComponent(jButton1)
-                .addGap(31, 31, 31)
-                .addComponent(jButton2)
-                .addGap(50, 50, 50)
-                .addComponent(jButton3)
-                .addGap(38, 38, 38)
-                .addComponent(btnjpUsuarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addGap(26, 26, 26))
-        );
+        btnNutricionista.setBackground(new java.awt.Color(255, 153, 255));
+        btnNutricionista.setForeground(new java.awt.Color(0, 0, 0));
+        btnNutricionista.setText("Nutricionista");
+        btnNutricionista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNutricionistaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnNutricionista, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 400, 138, 41));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/6358552-removebg-preview 1.jpg"))); // NOI18N
+        btnCerrarSesion.setBackground(new java.awt.Color(255, 153, 255));
+        btnCerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 650, 138, 41));
 
-        javax.swing.GroupLayout jpContenedorLayout = new javax.swing.GroupLayout(jpContenedor);
-        jpContenedor.setLayout(jpContenedorLayout);
-        jpContenedorLayout.setHorizontalGroup(
-            jpContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpContenedorLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116)
-                .addComponent(jLabel2)
-                .addGap(126, 126, 126)
-                .addComponent(jLabel3)
-                .addGap(0, 265, Short.MAX_VALUE))
-        );
-        jpContenedorLayout.setVerticalGroup(
-            jpContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jpContenedorLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jpContenedorLayout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jpContenedor.setBackground(new java.awt.Color(255, 255, 255));
+        jpContenedor.setPreferredSize(new java.awt.Dimension(894, 0));
+        jpContenedor.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 1570, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnjpUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjpUsuariosActionPerformed
+    private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnjpUsuariosActionPerformed
+    }//GEN-LAST:event_btnUsuariosActionPerformed
+
+    private void btnEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrenadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEntrenadorActionPerformed
+
+    private void btnNutricionistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNutricionistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNutricionistaActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,21 +157,17 @@ public class FrmInicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmInicio().setVisible(true);
+                initInicio();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnjpUsuarios;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JButton btnCerrarSesion;
+    public javax.swing.JButton btnEntrenador;
+    public javax.swing.JButton btnNutricionista;
+    public javax.swing.JButton btnUsuarios;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jpContenedor;
     // End of variables declaration//GEN-END:variables
 }
