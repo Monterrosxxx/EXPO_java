@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import vista.FrmInicio;
+import static vista.bienvenida.initBienvenida;
 import vista.panelUsuarios;
 
 
@@ -14,6 +15,7 @@ public class ctrlInicio implements MouseListener{
         this.vista = Vista;
         
         vista.btnUsuarios.addMouseListener(this);
+        vista.btnCerrarSesion.addMouseListener(this);
         
     }
 
@@ -34,6 +36,14 @@ public class ctrlInicio implements MouseListener{
             vista.jpContenedor.revalidate();
             vista.jpContenedor.repaint();
         }
+        
+        if(e.getSource() == vista.btnCerrarSesion){
+            
+            initBienvenida();
+            vista.dispose();
+            
+        }
+        
     }
 
     @Override

@@ -86,7 +86,7 @@ public class FrmInicio extends javax.swing.JFrame {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 650, 138, 41));
+        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, 138, 41));
 
         jpContenedor.setBackground(new java.awt.Color(255, 255, 255));
         jpContenedor.setPreferredSize(new java.awt.Dimension(894, 0));

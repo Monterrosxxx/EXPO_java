@@ -2,6 +2,9 @@ package modelo;
 import java.sql.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import vista.panelUsuarios;
 
 public class Usuarios {
     
@@ -128,4 +131,65 @@ public class Usuarios {
         }
         return actualizacionExitosa;
     }
+    
+    public void eliminarUsuario(JTable tabla) {
+        //Creamos una variable igual a ejecutar el método de la clase de conexión
+        Connection conexion = ClaseConexion.getConexion();
+ 
+        //obtenemos que fila seleccionó el usuario
+        int filaSeleccionada = tabla.getSelectedRow();
+        //Obtenemos el id de la fila seleccionada
+        String idUsuarioSeleccionado = tabla.getValueAt(filaSeleccionada, 0).toString();
+        //borramos 
+        try {
+            PreparedStatement deleteEstudiante = conexion.prepareStatement("DELETE FROM Usuarios where idUsuario = ?");
+            deleteEstudiante.setString(1, idUsuarioSeleccionado);
+            deleteEstudiante.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("este es el error metodo de eliminar" + e);
+        }
+    }
+    
+    public void mostrarUsuariosTB(JTable tabla) {
+        //Creamos una variable de la clase de conexion
+        Connection conexion = ClaseConexion.getConexion();
+        //Definimos el modelo de la tabla
+        DefaultTableModel modeloUsuarios = new DefaultTableModel();
+        modeloUsuarios.setColumnIdentifiers(new Object[]{"idUsuario", "Correo", "Contraña", "Nombre"});
+        try {
+            //Creamos un Statement
+            Statement statement = conexion.createStatement();
+            //Ejecutamos el Statement con la consulta y lo asignamos a una variable de tipo ResultSet
+            ResultSet rs = statement.executeQuery("SELECT * FROM Usuarios");
+            //Recorremos el ResultSet
+            while (rs.next()) {
+                //Llenamos el modelo por cada vez que recorremos el resultSet
+                modeloUsuarios.addRow(new Object[]{rs.getString("idUsuario"), 
+                    rs.getString("correo"), 
+                    rs.getString("clave"), 
+                    rs.getString("nombre")});
+            }
+            //Asignamos el nuevo modelo lleno a la tabla
+            tabla.setModel(modeloUsuarios);
+        } catch (Exception e) {
+            System.out.println("Este es el error en el modelo, metodo mostrar " + e);
+        }
+    }
+    
+    public void cargarDatosTabla(panelUsuarios vista) {
+        // Obtén la fila seleccionada 
+        int filaSeleccionada = vista.jTBusuariosCRUD.getSelectedRow();
+        // Debemos asegurarnos que haya una fila seleccionada antes de acceder a sus valores
+        if (filaSeleccionada != -1) {
+            String idUsuario = vista.jTBusuariosCRUD.getValueAt(filaSeleccionada, 0).toString();
+            String correoTB = vista.jTBusuariosCRUD.getValueAt(filaSeleccionada, 1).toString();
+            String claveTB = vista.jTBusuariosCRUD.getValueAt(filaSeleccionada, 2).toString();
+            String nombreTB = vista.jTBusuariosCRUD.getValueAt(filaSeleccionada, 3).toString();
+            // Establece los valores en los campos de texto
+            vista.txtCorreoCRUD.setText(correoTB);
+            vista.txtContrasenaCRUD.setText(claveTB);
+            vista.txtNombreCRUD.setText(nombreTB);
+        }
+    }
+    
 }
