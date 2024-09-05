@@ -132,23 +132,52 @@ public class Usuarios {
         return actualizacionExitosa;
     }
     
-    public void eliminarUsuario(JTable tabla) {
+        public void actualizarUsuario(JTable tabla) {
         //Creamos una variable igual a ejecutar el método de la clase de conexión
         Connection conexion = ClaseConexion.getConexion();
- 
         //obtenemos que fila seleccionó el usuario
         int filaSeleccionada = tabla.getSelectedRow();
-        //Obtenemos el id de la fila seleccionada
-        String idUsuarioSeleccionado = tabla.getValueAt(filaSeleccionada, 0).toString();
-        //borramos 
-        try {
-            PreparedStatement deleteEstudiante = conexion.prepareStatement("DELETE FROM Usuarios where idUsuario = ?");
-            deleteEstudiante.setString(1, idUsuarioSeleccionado);
-            deleteEstudiante.executeUpdate();
-        } catch (Exception e) {
-            System.out.println("este es el error metodo de eliminar" + e);
+        if (filaSeleccionada != -1) {
+            //Obtenemos el id de la fila seleccionada
+            String idUsuario = tabla.getValueAt(filaSeleccionada, 0).toString();
+            try { 
+                //Ejecutamos la Query
+                PreparedStatement updateProduct = conexion.prepareStatement("UPDATE Usuarios set correo= ?, clave = ?, nombre = ? where idUsuario = ?");
+                updateProduct.setString(1, getCorreo());
+                updateProduct.setString(2, getClave());
+                updateProduct.setString(3, getNombre());
+                updateProduct.setString(4, idUsuario);
+                updateProduct.executeUpdate();
+            } catch (Exception e) {
+                System.out.println("este es el error en el metodo de actualizarUsuario" + e);
+            }
+        } else {
+            System.out.println("no funciona actualizar");
+            
         }
     }
+    
+    public void eliminarUsuario(JTable tabla) {
+    Connection conexion = ClaseConexion.getConexion();
+    int filaSeleccionada = tabla.getSelectedRow();
+    String idUsuarioSeleccionado = tabla.getValueAt(filaSeleccionada, 0).toString();
+    
+    try {
+        // Elimina los registros de la tabla Cliente que referencian al usuario
+        PreparedStatement deleteCliente = conexion.prepareStatement("DELETE FROM Cliente WHERE idUsuario = ?");
+        deleteCliente.setString(1, idUsuarioSeleccionado);
+        deleteCliente.executeUpdate();
+        
+        // Luego elimina el usuario
+        PreparedStatement deleteUsuario = conexion.prepareStatement("DELETE FROM Usuarios WHERE idUsuario = ?");
+        deleteUsuario.setString(1, idUsuarioSeleccionado);
+        deleteUsuario.executeUpdate();
+        
+    } catch (Exception e) {
+        System.out.println("Error al eliminar: " + e);
+    }
+}
+
     
     public void mostrarUsuariosTB(JTable tabla) {
         //Creamos una variable de la clase de conexion

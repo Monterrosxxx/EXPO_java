@@ -63,7 +63,7 @@ public class panelUsuarios extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Apellidos");
+        jLabel4.setText("Contraseña");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, -1, -1));
 
         txtCorreoCRUD.setBackground(new java.awt.Color(221, 221, 221));
@@ -149,4 +149,8 @@ public class panelUsuarios extends javax.swing.JPanel {
     public javax.swing.JTextField txtCorreoCRUD;
     public javax.swing.JTextField txtNombreCRUD;
     // End of variables declaration//GEN-END:variables
+
+    public void dispose() {
+    }
+
 }

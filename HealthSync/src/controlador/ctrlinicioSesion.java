@@ -35,12 +35,7 @@ public class ctrlinicioSesion implements MouseListener{
             JOptionPane.showMessageDialog(vista, "Ingrese un correo válido");
             return;
         }
-
-        // Que la contraseña tenga más de 6 caracteres
-        if (vista.txtContrasena.getText().length() < 6) {
-            JOptionPane.showMessageDialog(vista, "Contraseña inválida: debe contener mínimo 6 caracteres");
-            return;
-        }   
+ 
             modelo.setCorreo(vista.txtCorreoUsuario.getText());
             modelo.setClave(vista.txtContrasena.getText());
             
@@ -48,11 +43,12 @@ public class ctrlinicioSesion implements MouseListener{
         
             if (comprobarCredenciales == true) {
                 JOptionPane.showMessageDialog(vista,"Usuario existe, ¡Bienvenido!");
+                 initInicio();
+                 vista.dispose();
             } else {
                 JOptionPane.showMessageDialog(vista, "Usuario no encontrado");
             }
-                 initInicio();
-                 vista.dispose();  
+                   
         }
         if(e.getSource() == vista.btnRegistrarse){
             initRegistrarse();
