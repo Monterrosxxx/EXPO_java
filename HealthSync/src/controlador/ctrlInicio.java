@@ -4,6 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import vista.FrmInicio;
 import static vista.bienvenida.initBienvenida;
+import vista.panelEntrenador;
 import vista.panelUsuarios;
 
 
@@ -15,6 +16,7 @@ public class ctrlInicio implements MouseListener{
         this.vista = Vista;
         
         vista.btnUsuarios.addMouseListener(this);
+        vista.btnEntrenador.addMouseListener(this);
         vista.btnCerrarSesion.addMouseListener(this);
         
     }
@@ -42,6 +44,20 @@ public class ctrlInicio implements MouseListener{
             initBienvenida();
             vista.dispose();
             
+        }
+        
+        if(e.getSource() == vista.btnEntrenador){
+            //1-Creo un objeto del panel que quiero mostrar
+            panelEntrenador  objEntrenador = new panelEntrenador();
+            
+            //2- Limpio el panel contendor (por si acaso)
+            vista.jpContenedor.removeAll();
+            //3- muestro el panel que quiero
+            vista.jpContenedor.add(objEntrenador);
+            
+            //4- Refrescar todo
+            vista.jpContenedor.revalidate();
+            vista.jpContenedor.repaint();
         }
         
     }
