@@ -47,6 +47,10 @@ public class panelEntrenador extends javax.swing.JPanel {
         btnLimpiarCRUDentrenador = new javax.swing.JButton();
         cbEdadEntrenador = new javax.swing.JSpinner();
         btnEliminarEntrenador = new javax.swing.JButton();
+        cbEdadEntrenador1 = new javax.swing.JSpinner();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTBentrenadorCRUD = new javax.swing.JTable();
 
         jTBusuariosCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,17 +74,17 @@ public class panelEntrenador extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 40)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenido a HealthSync");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Leelawadee UI", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("¡Hola administrador!");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Leelawadee UI", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Estas en el apartado agregar entrenador");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
 
         btnSalirJPEntrenador.setBackground(new java.awt.Color(118, 99, 242));
         btnSalirJPEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
@@ -90,12 +94,12 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnSalirJPEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalirJPEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 179, 52));
+        jPanel1.add(btnSalirJPEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 179, 52));
 
         jLabel4.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Nombre");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         txtNombreEntrenador.setBackground(new java.awt.Color(221, 221, 221));
         txtNombreEntrenador.addActionListener(new java.awt.event.ActionListener() {
@@ -103,28 +107,28 @@ public class panelEntrenador extends javax.swing.JPanel {
                 txtNombreEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombreEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 426, 51));
+        jPanel1.add(txtNombreEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 426, 51));
 
         jLabel5.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Edad");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Correo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
         txtCorreoEntrenador.setBackground(new java.awt.Color(221, 221, 221));
-        jPanel1.add(txtCorreoEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 426, 56));
+        jPanel1.add(txtCorreoEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 426, 56));
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Número");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
 
         txtNumeroTelEntrenador.setBackground(new java.awt.Color(221, 221, 221));
-        jPanel1.add(txtNumeroTelEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 550, 426, 58));
+        jPanel1.add(txtNumeroTelEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 426, 58));
 
         btnAgregarEntrenador.setBackground(new java.awt.Color(118, 99, 242));
         btnAgregarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
@@ -134,12 +138,12 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnAgregarEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 179, 52));
+        jPanel1.add(btnAgregarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 179, 52));
 
         btnEditarEntrenador.setBackground(new java.awt.Color(118, 99, 242));
         btnEditarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         btnEditarEntrenador.setText("Editar");
-        jPanel1.add(btnEditarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 179, 52));
+        jPanel1.add(btnEditarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 179, 52));
 
         btnLimpiarCRUDentrenador.setBackground(new java.awt.Color(118, 99, 242));
         btnLimpiarCRUDentrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
@@ -150,10 +154,10 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnLimpiarCRUDentrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiarCRUDentrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, 179, 52));
+        jPanel1.add(btnLimpiarCRUDentrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 179, 52));
 
         cbEdadEntrenador.setModel(new javax.swing.SpinnerNumberModel(0, 0, 150, 1));
-        jPanel1.add(cbEdadEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 426, 59));
+        jPanel1.add(cbEdadEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 426, 59));
 
         btnEliminarEntrenador.setBackground(new java.awt.Color(118, 99, 242));
         btnEliminarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
@@ -164,19 +168,46 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnEliminarEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 450, 179, 52));
+        jPanel1.add(btnEliminarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, 179, 52));
+
+        cbEdadEntrenador1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 150, 1));
+        jPanel1.add(cbEdadEntrenador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 240, 50));
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Especialidad");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, -1, 20));
+
+        jTBentrenadorCRUD.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTBentrenadorCRUD);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -208,6 +239,7 @@ public class panelEntrenador extends javax.swing.JPanel {
     public javax.swing.JButton btnLimpiarCRUDentrenador;
     public javax.swing.JButton btnSalirJPEntrenador;
     public javax.swing.JSpinner cbEdadEntrenador;
+    public javax.swing.JSpinner cbEdadEntrenador1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -215,8 +247,11 @@ public class panelEntrenador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable jTBentrenadorCRUD;
     public javax.swing.JTable jTBusuariosCRUD;
     public javax.swing.JTextField txtCorreoEntrenador;
     public javax.swing.JTextField txtNombreEntrenador;
