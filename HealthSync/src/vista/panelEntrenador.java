@@ -2,6 +2,7 @@
 package vista;
 
 import controlador.ctrlCRUDentrenador;
+import modelo.cbEspecialidad;
 
 /**
  *
@@ -16,7 +17,8 @@ public class panelEntrenador extends javax.swing.JPanel {
         initComponents();
         
         panelEntrenador panelEcrud = this;
-        ctrlCRUDentrenador controlador = new ctrlCRUDentrenador(panelEcrud);
+        cbEspecialidad modeloUno = new cbEspecialidad();
+        ctrlCRUDentrenador controlador = new ctrlCRUDentrenador(panelEcrud, modeloUno);
     }
 
     /**
@@ -47,8 +49,8 @@ public class panelEntrenador extends javax.swing.JPanel {
         btnLimpiarCRUDentrenador = new javax.swing.JButton();
         cbEdadEntrenador = new javax.swing.JSpinner();
         btnEliminarEntrenador = new javax.swing.JButton();
-        cbEdadEntrenador1 = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
+        cbEspecialidad = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTBentrenadorCRUD = new javax.swing.JTable();
 
@@ -170,13 +172,18 @@ public class panelEntrenador extends javax.swing.JPanel {
         });
         jPanel1.add(btnEliminarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, 179, 52));
 
-        cbEdadEntrenador1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 150, 1));
-        jPanel1.add(cbEdadEntrenador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 240, 50));
-
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Especialidad");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, -1, 20));
+
+        cbEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbEspecialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEspecialidadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 240, 60));
 
         jTBentrenadorCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -231,6 +238,10 @@ public class panelEntrenador extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarEntrenadorActionPerformed
 
+    private void cbEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEspecialidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEspecialidadActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarEntrenador;
@@ -239,7 +250,7 @@ public class panelEntrenador extends javax.swing.JPanel {
     public javax.swing.JButton btnLimpiarCRUDentrenador;
     public javax.swing.JButton btnSalirJPEntrenador;
     public javax.swing.JSpinner cbEdadEntrenador;
-    public javax.swing.JSpinner cbEdadEntrenador1;
+    public javax.swing.JComboBox<String> cbEspecialidad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

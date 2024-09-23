@@ -5,6 +5,7 @@ import java.awt.event.MouseListener;
 import vista.FrmInicio;
 import static vista.bienvenida.initBienvenida;
 import vista.panelEntrenador;
+import vista.panelNutricionista;
 import vista.panelUsuarios;
 
 
@@ -15,6 +16,7 @@ public class ctrlInicio implements MouseListener{
     public ctrlInicio (FrmInicio Vista) {
         this.vista = Vista;
         
+        vista.btnNutricionista.addMouseListener(this);
         vista.btnUsuarios.addMouseListener(this);
         vista.btnEntrenador.addMouseListener(this);
         vista.btnCerrarSesion.addMouseListener(this);
@@ -56,6 +58,16 @@ public class ctrlInicio implements MouseListener{
             vista.jpContenedor.add(objEntrenador);
             
             //4- Refrescar todo
+            vista.jpContenedor.revalidate();
+            vista.jpContenedor.repaint();
+        }
+        
+        if(e.getSource() == vista.btnNutricionista){
+            
+            panelNutricionista objNutricionista = new panelNutricionista();
+            
+            vista.jpContenedor.removeAll();
+            vista.jpContenedor.add(objNutricionista);
             vista.jpContenedor.revalidate();
             vista.jpContenedor.repaint();
         }
