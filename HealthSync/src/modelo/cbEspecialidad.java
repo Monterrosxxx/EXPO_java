@@ -56,6 +56,9 @@ public class cbEspecialidad {
                 String nombreE = rs.getString("nombreEspecialidad");
                 comboBox.addItem(new cbEspecialidad(ID, nombreE));                
             }
+            
+            rs.close();
+            statement.close();
         }
         catch(SQLException ex)
         {

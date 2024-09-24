@@ -234,7 +234,7 @@ public class Nutricionista {
     }
 
     // Método para mostrar los datos de los nutricionistas en una tabla
-    public void mostrarDatosNutricionista(JTable tabla) {
+    public void mostrarDatosNutricionista(JTable tabla) {   
         Connection conexion = ClaseConexion.getConexion();
         DefaultTableModel modeloNutricionistas = new DefaultTableModel();
         modeloNutricionistas.setColumnIdentifiers(new Object[]{"idNutricionista", "Nombre", "Correo", "Clave", "Edad", "Número", "idUsuario"});
