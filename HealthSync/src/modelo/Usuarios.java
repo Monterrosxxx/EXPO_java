@@ -65,25 +65,17 @@ public class Usuarios {
     }
     
     public void insertarUsuario(){
-        
         Connection conexion = ClaseConexion.getConexion();
         
         try{
-            
-            //Creamos el PreparedStatement que ejecutará la Query
-            PreparedStatement addUsuarios = conexion.prepareStatement("INSERT INTO Usuarios (correo, clave, nombre) VALUES (?, ?, ?)");
-            //Establecer valores de la consulta SQL
+            PreparedStatement addUsuarios = conexion.prepareStatement("INSERT INTO Usuarios (correo, clave, nombre, idRol) VALUES (?, ?, ?, 1)");
             addUsuarios.setString(1, getCorreo());
-            // Aqui se encripta la clave xdd
             addUsuarios.setString(2, convertirSHA256(getClave())); 
             addUsuarios.setString(3, getNombre());
- 
-            //Ejecutar la consulta
             addUsuarios.executeUpdate();
-            
         }
         catch(SQLException ex){
-            System.out.println("este es el error en el modelo: Metodo insertar " + ex);
+            System.out.println("Error en el modelo: Método insertar " + ex);
         }
     }
     
@@ -92,11 +84,9 @@ public class Usuarios {
         boolean resultadodelInicioSesion = false;
         
         try {
-            //Preparamos la consulta SQL para verificar el usuario
             String sql = "SELECT * FROM Usuarios WHERE correo = ? AND clave = ?";
             PreparedStatement statement = conexion.prepareStatement(sql);
             statement.setString(1, getCorreo());
-            // SE encripta la clave para comparar
             statement.setString(2, convertirSHA256(getClave())); 
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
@@ -132,16 +122,12 @@ public class Usuarios {
         return actualizacionExitosa;
     }
     
-        public void actualizarUsuario(JTable tabla) {
-        //Creamos una variable igual a ejecutar el método de la clase de conexión
+    public void actualizarUsuario(JTable tabla) {
         Connection conexion = ClaseConexion.getConexion();
-        //obtenemos que fila seleccionó el usuario
         int filaSeleccionada = tabla.getSelectedRow();
         if (filaSeleccionada != -1) {
-            //Obtenemos el id de la fila seleccionada
             String idUsuario = tabla.getValueAt(filaSeleccionada, 0).toString();
             try { 
-                //Ejecutamos la Query
                 PreparedStatement updateProduct = conexion.prepareStatement("UPDATE Usuarios set correo= ?, clave = ?, nombre = ? where idUsuario = ?");
                 updateProduct.setString(1, getCorreo());
                 updateProduct.setString(2, getClave());
@@ -149,76 +135,64 @@ public class Usuarios {
                 updateProduct.setString(4, idUsuario);
                 updateProduct.executeUpdate();
             } catch (Exception e) {
-                System.out.println("este es el error en el metodo de actualizarUsuario" + e);
+                System.out.println("Error en el método de actualizarUsuario: " + e);
             }
         } else {
-            System.out.println("no funciona actualizar");
-            
+            System.out.println("No se pudo actualizar");
         }
     }
     
     public void eliminarUsuario(JTable tabla) {
-    Connection conexion = ClaseConexion.getConexion();
-    int filaSeleccionada = tabla.getSelectedRow();
-    String idUsuarioSeleccionado = tabla.getValueAt(filaSeleccionada, 0).toString();
-    
-    try {
-        // Elimina los registros de la tabla Cliente que referencian al usuario
-        PreparedStatement deleteCliente = conexion.prepareStatement("DELETE FROM Cliente WHERE idUsuario = ?");
-        deleteCliente.setString(1, idUsuarioSeleccionado);
-        deleteCliente.executeUpdate();
+        Connection conexion = ClaseConexion.getConexion();
+        int filaSeleccionada = tabla.getSelectedRow();
+        String idUsuarioSeleccionado = tabla.getValueAt(filaSeleccionada, 0).toString();
         
-        // Luego elimina el usuario
-        PreparedStatement deleteUsuario = conexion.prepareStatement("DELETE FROM Usuarios WHERE idUsuario = ?");
-        deleteUsuario.setString(1, idUsuarioSeleccionado);
-        deleteUsuario.executeUpdate();
-        
-    } catch (Exception e) {
-        System.out.println("Error al eliminar: " + e);
+        try {
+            PreparedStatement deleteCliente = conexion.prepareStatement("DELETE FROM Cliente WHERE idUsuario = ?");
+            deleteCliente.setString(1, idUsuarioSeleccionado);
+            deleteCliente.executeUpdate();
+            
+            PreparedStatement deleteUsuario = conexion.prepareStatement("DELETE FROM Usuarios WHERE idUsuario = ?");
+            deleteUsuario.setString(1, idUsuarioSeleccionado);
+            deleteUsuario.executeUpdate();
+            
+        } catch (Exception e) {
+            System.out.println("Error al eliminar: " + e);
+        }
     }
-}
-
     
     public void mostrarUsuariosTB(JTable tabla) {
-        //Creamos una variable de la clase de conexion
         Connection conexion = ClaseConexion.getConexion();
-        //Definimos el modelo de la tabla
         DefaultTableModel modeloUsuarios = new DefaultTableModel();
-        modeloUsuarios.setColumnIdentifiers(new Object[]{"idUsuario", "Correo", "Contraña", "Nombre"});
+        modeloUsuarios.setColumnIdentifiers(new Object[]{"idUsuario", "Correo", "Contraseña", "Nombre", "idRol"});
         try {
-            //Creamos un Statement
             Statement statement = conexion.createStatement();
-            //Ejecutamos el Statement con la consulta y lo asignamos a una variable de tipo ResultSet
             ResultSet rs = statement.executeQuery("SELECT * FROM Usuarios");
-            //Recorremos el ResultSet
             while (rs.next()) {
-                //Llenamos el modelo por cada vez que recorremos el resultSet
-                modeloUsuarios.addRow(new Object[]{rs.getString("idUsuario"), 
+                modeloUsuarios.addRow(new Object[]{
+                    rs.getString("idUsuario"), 
                     rs.getString("correo"), 
                     rs.getString("clave"), 
-                    rs.getString("nombre")});
+                    rs.getString("nombre"),
+                    rs.getString("idRol")
+                });
             }
-            //Asignamos el nuevo modelo lleno a la tabla
             tabla.setModel(modeloUsuarios);
         } catch (Exception e) {
-            System.out.println("Este es el error en el modelo, metodo mostrar " + e);
+            System.out.println("Error en el modelo, método mostrar: " + e);
         }
     }
     
     public void cargarDatosTabla(panelUsuarios vista) {
-        // Obtén la fila seleccionada 
         int filaSeleccionada = vista.jTBusuariosCRUD.getSelectedRow();
-        // Debemos asegurarnos que haya una fila seleccionada antes de acceder a sus valores
         if (filaSeleccionada != -1) {
             String idUsuario = vista.jTBusuariosCRUD.getValueAt(filaSeleccionada, 0).toString();
             String correoTB = vista.jTBusuariosCRUD.getValueAt(filaSeleccionada, 1).toString();
             String claveTB = vista.jTBusuariosCRUD.getValueAt(filaSeleccionada, 2).toString();
             String nombreTB = vista.jTBusuariosCRUD.getValueAt(filaSeleccionada, 3).toString();
-            // Establece los valores en los campos de texto
             vista.txtCorreoCRUD.setText(correoTB);
             vista.txtContrasenaCRUD.setText(claveTB);
             vista.txtNombreCRUD.setText(nombreTB);
         }
     }
-    
 }

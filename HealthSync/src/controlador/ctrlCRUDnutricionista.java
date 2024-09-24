@@ -11,6 +11,7 @@ public class ctrlCRUDnutricionista implements MouseListener {
     private panelNutricionista vista;
     private Nutricionista modelo;
     
+    // Constructor de la clase
     public ctrlCRUDnutricionista(panelNutricionista vista, Nutricionista modelo1) {
         this.vista = vista;
         this.modelo = new Nutricionista();
@@ -20,8 +21,12 @@ public class ctrlCRUDnutricionista implements MouseListener {
         vista.btnAgregar.addMouseListener(this);
         vista.btnEliminar.addMouseListener(this);
         vista.jTBnutricionistaCRUD.addMouseListener(this);
+        
+        // Mostrar los datos de los nutricionistas al iniciar
+        modelo.mostrarDatosNutricionista(vista.jTBnutricionistaCRUD);
     }
 
+    // Método principal para manejar eventos de clic
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == vista.btnAgregar) {
@@ -31,10 +36,20 @@ public class ctrlCRUDnutricionista implements MouseListener {
         } else if (e.getSource() == vista.btnActualizar) {
             actualizarNutricionista();
         } else if (e.getSource() == vista.jTBnutricionistaCRUD) {
-            cargarDatosNutricionista();
+            // Cargar datos del nutricionista seleccionado
+            modelo.cargarDatosNutricionista(vista);
+        }
+        
+        if(e.getSource() == vista.btnLimpiar){
+            vista.txtNombreNutri.setText("");
+            vista.txtEdadNutri.setText("");
+            vista.txtNumeroNutri.setText("");
+            vista.txtCorreoNutri.setText("");
+            vista.txtClaveNutri.setText("");
         }
     }
 
+    // Método para agregar un nuevo nutricionista
     private void agregarNutricionista() {
         try {
             // Validar campos
@@ -50,12 +65,12 @@ public class ctrlCRUDnutricionista implements MouseListener {
             modelo.setCorreo(vista.txtCorreoNutri.getText());
             modelo.setClave(vista.txtClaveNutri.getText());
 
-            // Insertar nutricionista
+            // Insertar nutricionista en la base de datos
             modelo.insertarNutricionista();
 
             // Limpiar campos y actualizar tabla
             limpiarCampos();
-            actualizarTabla();
+            modelo.mostrarDatosNutricionista(vista.jTBnutricionistaCRUD);
             JOptionPane.showMessageDialog(vista, "Nutricionista agregado con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(vista, "La edad debe ser un número válido", "Error", JOptionPane.ERROR_MESSAGE);
@@ -64,6 +79,7 @@ public class ctrlCRUDnutricionista implements MouseListener {
         }
     }
 
+    // Método para eliminar un nutricionista
     private void eliminarNutricionista() {
         try {
             // Obtener el ID del nutricionista seleccionado
@@ -79,12 +95,12 @@ public class ctrlCRUDnutricionista implements MouseListener {
             // Confirmar eliminación
             int confirmacion = JOptionPane.showConfirmDialog(vista, "¿Está seguro de eliminar este nutricionista?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
             if (confirmacion == JOptionPane.YES_OPTION) {
-                // Eliminar nutricionista
+                // Eliminar nutricionista de la base de datos
                 modelo.eliminarNutricionista();
 
                 // Limpiar campos y actualizar tabla
                 limpiarCampos();
-                actualizarTabla();
+                modelo.mostrarDatosNutricionista(vista.jTBnutricionistaCRUD);
                 JOptionPane.showMessageDialog(vista, "Nutricionista eliminado con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception ex) {
@@ -92,6 +108,7 @@ public class ctrlCRUDnutricionista implements MouseListener {
         }
     }
 
+    // Método para actualizar un nutricionista
     private void actualizarNutricionista() {
         try {
             // Validar campos
@@ -100,6 +117,16 @@ public class ctrlCRUDnutricionista implements MouseListener {
                 return;
             }
 
+            // Obtener el ID del nutricionista seleccionado
+            int filaSeleccionada = vista.jTBnutricionistaCRUD.getSelectedRow();
+            if (filaSeleccionada == -1) {
+                JOptionPane.showMessageDialog(vista, "Seleccione un nutricionista para actualizar", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            int idNutricionista = Integer.parseInt(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 0).toString());
+            modelo.setIdNutricionista(idNutricionista);
+
             // Obtener datos de la vista
             modelo.setNombre(vista.txtNombreNutri.getText());
             modelo.setEdad(Integer.parseInt(vista.txtEdadNutri.getText()));
@@ -107,12 +134,12 @@ public class ctrlCRUDnutricionista implements MouseListener {
             modelo.setCorreo(vista.txtCorreoNutri.getText());
             modelo.setClave(vista.txtClaveNutri.getText());
 
-            // Actualizar nutricionista
+            // Actualizar nutricionista en la base de datos
             modelo.actualizarNutricionista();
 
             // Limpiar campos y actualizar tabla
             limpiarCampos();
-            actualizarTabla();
+            modelo.mostrarDatosNutricionista(vista.jTBnutricionistaCRUD);
             JOptionPane.showMessageDialog(vista, "Nutricionista actualizado con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(vista, "La edad debe ser un número válido", "Error", JOptionPane.ERROR_MESSAGE);
@@ -121,18 +148,7 @@ public class ctrlCRUDnutricionista implements MouseListener {
         }
     }
 
-    private void cargarDatosNutricionista() {
-        int filaSeleccionada = vista.jTBnutricionistaCRUD.getSelectedRow();
-        if (filaSeleccionada != -1) {
-            vista.txtNombreNutri.setText(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 1).toString());
-            vista.txtEdadNutri.setText(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 2).toString());
-            vista.txtNumeroNutri.setText(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 3).toString());
-            vista.txtCorreoNutri.setText(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 4).toString());
-            // No mostramos la clave por seguridad
-            vista.txtClaveNutri.setText("");
-        }
-    }
-
+    // Método para limpiar los campos del formulario
     private void limpiarCampos() {
         vista.txtNombreNutri.setText("");
         vista.txtEdadNutri.setText("");
@@ -141,12 +157,7 @@ public class ctrlCRUDnutricionista implements MouseListener {
         vista.txtClaveNutri.setText("");
     }
 
-    private void actualizarTabla() {
-        // Aquí deberías implementar la lógica para actualizar la tabla
-        // Por ejemplo, podrías tener un método en el modelo que devuelva todos los nutricionistas
-        // y luego actualizar el modelo de la tabla con esos datos
-    }
-
+    // Método para verificar si hay campos vacíos en el formulario
     private boolean camposVacios() {
         return vista.txtNombreNutri.getText().isEmpty() ||
                vista.txtEdadNutri.getText().isEmpty() ||
@@ -155,7 +166,7 @@ public class ctrlCRUDnutricionista implements MouseListener {
                vista.txtClaveNutri.getText().isEmpty();
     }
 
-    // Estos métodos quedan vacíos ya que no necesitamos implementarlos
+    // Métodos no utilizados de la interfaz MouseListener
     @Override
     public void mousePressed(MouseEvent e) {}
     @Override

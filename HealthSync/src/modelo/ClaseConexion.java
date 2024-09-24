@@ -5,8 +5,8 @@ import java.sql.*;
 public class ClaseConexion {
     
     private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-    private static final String USUARIO = "PTC_DEVELOPER";
-    private static final String CONTRASENA = "ptcDefensa";
+    private static final String USUARIO = "pruebaNuevaBD";
+    private static final String CONTRASENA = "prueba";
     public static Connection getConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");

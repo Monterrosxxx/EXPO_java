@@ -1,11 +1,18 @@
+// Importaciones necesarias para la clase
 package modelo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import vista.panelNutricionista;
 
 public class Nutricionista {
+    // Atributos de la clase Nutricionista
     private int idNutricionista;
     private String nombre;
     private int edad;
@@ -13,7 +20,7 @@ public class Nutricionista {
     private String correo;
     private String clave;
 
-    // Getters y setters
+    // Getters y setters para cada atributo
     public int getIdNutricionista() {
         return idNutricionista;
     }
@@ -61,7 +68,28 @@ public class Nutricionista {
     public void setClave(String clave) {
         this.clave = clave;
     }
-
+    
+    // Método para convertir la contraseña a SHA-256
+    public static String convertirSHA256(String password) {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("SHA-256");
+        }
+        catch (NoSuchAlgorithmException e) {
+            System.out.println(e.toString());
+            return null;
+        }
+        byte[] hash = md.digest(password.getBytes());
+        StringBuffer sb = new StringBuffer();
+    
+        for(byte b : hash) {
+            sb.append(String.format("%02x", b));
+        }
+    
+        return sb.toString();
+    }
+    
+    // Método para insertar un nuevo nutricionista en la base de datos
     public void insertarNutricionista() {
         Connection conexion = ClaseConexion.getConexion();
         PreparedStatement pstmt = null;
@@ -70,23 +98,18 @@ public class Nutricionista {
             // Iniciar una transacción
             conexion.setAutoCommit(false);
 
-            // Insertar en la tabla tipoUsuarios
-            String sqlTipoUsuario = "INSERT INTO tipoUsuarios (nombreRol) VALUES ('Nutricionista')";
-            pstmt = conexion.prepareStatement(sqlTipoUsuario, new String[]{"idRol"});
-            pstmt.executeUpdate();
-            rs = pstmt.getGeneratedKeys();
-            int idRol = 0;
-            if (rs.next()) {
-                idRol = rs.getInt(1);
-            }
-
-            // Insertar en la tabla Usuarios
-            String sqlUsuario = "INSERT INTO Usuarios (correo, clave, nombre) VALUES (?, ?, ?)";
+            // Insertar en la tabla UsuariosNSERT INTO Usuarios (nombre,
+            String sqlUsuario = "INSERT INTO Usuarios (nombre, correo, clave, idRol) VALUES (?, ?, ?, ?)";
             pstmt = conexion.prepareStatement(sqlUsuario, new String[]{"idUsuario"});
-            pstmt.setString(1, getCorreo());
-            pstmt.setString(2, getClave());
-            pstmt.setString(3, getNombre());
+            pstmt.setString(1, getNombre());
+            pstmt.setString(2, getCorreo());
+            // Se hashea la clave
+            pstmt.setString(3, convertirSHA256(getClave())); 
+            // idRol fijo como 3 para nutricionistas
+            pstmt.setInt(4, 3); 
             pstmt.executeUpdate();
+
+            // Obtener el idUsuario generado
             rs = pstmt.getGeneratedKeys();
             int idUsuario = 0;
             if (rs.next()) {
@@ -94,20 +117,18 @@ public class Nutricionista {
             }
 
             // Insertar en la tabla Nutricionista
-            String sqlNutricionista = "INSERT INTO Nutricionista (nombre, edad, numero, idRol, idUsuario) VALUES (?, ?, ?, ?, ?)";
+            String sqlNutricionista = "INSERT INTO Nutricionista (edad, numero, idUsuario) VALUES (?, ?, ?)";
             pstmt = conexion.prepareStatement(sqlNutricionista);
-            pstmt.setString(1, getNombre());
-            pstmt.setInt(2, getEdad());
-            pstmt.setString(3, getNumero());
-            pstmt.setInt(4, idRol);
-            pstmt.setInt(5, idUsuario);
+            pstmt.setInt(1, getEdad());
+            pstmt.setString(2, getNumero());
+            pstmt.setInt(3, idUsuario);
             pstmt.executeUpdate();
 
             // Confirmar la transacción
             conexion.commit();
 
         } catch (SQLException e) {
-            // En caso de error, revertir la transacción
+            // En caso de error, revertir el statement
             try {
                 if (conexion != null) {
                     conexion.rollback();
@@ -115,7 +136,7 @@ public class Nutricionista {
             } catch (SQLException ex) {
                 System.out.println("Error al hacer rollback: " + ex);
             }
-            System.out.println("Error al insertar nutricionista: " + e);
+            System.out.println("Error en el metodo insertarNutricionista: " + e);
         } finally {
             try {
                 // Restaurar el modo de autocommit
@@ -131,19 +152,18 @@ public class Nutricionista {
         }
     }
 
+    // Método para eliminar un nutricionista de la base de datos
     public void eliminarNutricionista() {
         Connection conexion = ClaseConexion.getConexion();
         PreparedStatement pstmt = null;
         try {
-            // Primero, obtener idRol e idUsuario
-            String sqlSelect = "SELECT idRol, idUsuario FROM Nutricionista WHERE idNutricionista = ?";
+            // Primero, obtener idUsuario
+            String sqlSelect = "SELECT idUsuario FROM Nutricionista WHERE idNutricionista = ?";
             pstmt = conexion.prepareStatement(sqlSelect);
             pstmt.setInt(1, getIdNutricionista());
             ResultSet rs = pstmt.executeQuery();
-            int idRol = 0;
             int idUsuario = 0;
             if (rs.next()) {
-                idRol = rs.getInt("idRol");
                 idUsuario = rs.getInt("idUsuario");
             }
 
@@ -159,12 +179,6 @@ public class Nutricionista {
             pstmt.setInt(1, idUsuario);
             pstmt.executeUpdate();
 
-            // Eliminar de la tabla tipoUsuarios
-            String sqlTipoUsuario = "DELETE FROM tipoUsuarios WHERE idRol = ?";
-            pstmt = conexion.prepareStatement(sqlTipoUsuario);
-            pstmt.setInt(1, idRol);
-            pstmt.executeUpdate();
-
         } catch (SQLException e) {
             System.out.println("Error al eliminar nutricionista: " + e);
         } finally {
@@ -176,17 +190,17 @@ public class Nutricionista {
         }
     }
 
+    // Método para actualizar los datos de un nutricionista en la base de datos
     public void actualizarNutricionista() {
         Connection conexion = ClaseConexion.getConexion();
         PreparedStatement pstmt = null;
         try {
             // Actualizar la tabla Nutricionista
-            String sqlNutricionista = "UPDATE Nutricionista SET nombre = ?, edad = ?, numero = ? WHERE idNutricionista = ?";
+            String sqlNutricionista = "UPDATE Nutricionista SET edad = ?, numero = ? WHERE idNutricionista = ?";
             pstmt = conexion.prepareStatement(sqlNutricionista);
-            pstmt.setString(1, getNombre());
-            pstmt.setInt(2, getEdad());
-            pstmt.setString(3, getNumero());
-            pstmt.setInt(4, getIdNutricionista());
+            pstmt.setInt(1, getEdad());
+            pstmt.setString(2, getNumero());
+            pstmt.setInt(3, getIdNutricionista());
             pstmt.executeUpdate();
 
             // Obtener idUsuario
@@ -216,6 +230,54 @@ public class Nutricionista {
             } catch (SQLException e) {
                 System.out.println("Error al cerrar recursos: " + e);
             }
+        }
+    }
+
+    // Método para mostrar los datos de los nutricionistas en una tabla
+    public void mostrarDatosNutricionista(JTable tabla) {
+        Connection conexion = ClaseConexion.getConexion();
+        DefaultTableModel modeloNutricionistas = new DefaultTableModel();
+        modeloNutricionistas.setColumnIdentifiers(new Object[]{"idNutricionista", "Nombre", "Correo", "Clave", "Edad", "Número", "idUsuario"});
+        try {
+            // Consulta SQL para obtener datos de nutricionistas y usuarios
+            String sql = "SELECT n.idNutricionista, u.nombre, u.correo, u.clave, n.edad, n.numero, n.idUsuario " +
+                         "FROM Nutricionista n " +
+                         "INNER JOIN Usuarios u ON n.idUsuario = u.idUsuario";
+            PreparedStatement pstmt = conexion.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                modeloNutricionistas.addRow(new Object[]{
+                    rs.getInt("idNutricionista"),
+                    rs.getString("nombre"),
+                    rs.getString("correo"),
+                    rs.getString("clave"),
+                    rs.getInt("edad"),
+                    rs.getString("numero"),
+                    rs.getInt("idUsuario")
+                });
+            }
+            tabla.setModel(modeloNutricionistas);
+        } catch (Exception e) {
+            System.out.println("Error en el modelo, método mostrarDatosNutricionista: " + e);
+        }
+    }
+
+    // Método para cargar los datos de un nutricionista seleccionado en la tabla
+    public void cargarDatosNutricionista(panelNutricionista vista) {
+        int filaSeleccionada = vista.jTBnutricionistaCRUD.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            setIdNutricionista(Integer.parseInt(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 0).toString()));
+            setNombre(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 1).toString());
+            setCorreo(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 2).toString());
+            setClave(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 3).toString());
+            setEdad(Integer.parseInt(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 4).toString()));
+            setNumero(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 5).toString());
+            
+            vista.txtNombreNutri.setText(getNombre());
+            vista.txtCorreoNutri.setText(getCorreo());
+            vista.txtClaveNutri.setText(getClave());
+            vista.txtEdadNutri.setText(String.valueOf(getEdad()));
+            vista.txtNumeroNutri.setText(getNumero());
         }
     }
 }
