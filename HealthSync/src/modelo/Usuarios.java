@@ -1,4 +1,7 @@
+// Paquete al que pertenece la clase
 package modelo;
+
+// Importaciones necesarias para el funcionamiento de la clase
 import java.sql.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -6,13 +9,17 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import vista.panelUsuarios;
 
+// Definición de la clase Usuarios
 public class Usuarios {
     
+    // Atributos de la clase
     private String correo;
     private String clave;
     private String nombre;
     private static String correoRecuperacion;
+    private int idRol; // Nuevo atributo para almacenar el rol del usuario
 
+    // Métodos getter y setter para cada atributo
     public String getCorreo() {
         return correo;
     }
@@ -44,7 +51,18 @@ public class Usuarios {
     public static String getCorreoRecuperacion() {
         return correoRecuperacion;
     }
+
+    // Nuevo getter para idRol
+    public int getIdRol() {
+        return idRol;
+    }
+
+    // Nuevo setter para idRol
+    public void setIdRol(int idRol) {
+        this.idRol = idRol;
+    }
     
+    // Método para convertir una contraseña a su hash SHA-256
     public static String convertirSHA256(String password) {
         MessageDigest md = null;
         try {
@@ -64,6 +82,7 @@ public class Usuarios {
         return sb.toString();
     }
     
+    // Método para insertar un nuevo usuario en la base de datos
     public void insertarUsuario(){
         Connection conexion = ClaseConexion.getConexion();
         
@@ -79,18 +98,22 @@ public class Usuarios {
         }
     }
     
+    // Método para iniciar sesión y obtener el idRol del usuario
     public boolean iniciarSesionCredenciales(){
         Connection conexion = ClaseConexion.getConexion();
         boolean resultadodelInicioSesion = false;
         
         try {
-            String sql = "SELECT * FROM Usuarios WHERE correo = ? AND clave = ?";
+            String sql = "SELECT idRol FROM Usuarios WHERE correo = ? AND clave = ?";
             PreparedStatement statement = conexion.prepareStatement(sql);
             statement.setString(1, getCorreo());
             statement.setString(2, convertirSHA256(getClave())); 
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 resultadodelInicioSesion = true;
+                // Aqui se guarda el idRol del usuario para los niveles de Rol
+                //en la app
+                setIdRol(resultSet.getInt("idRol")); 
             }
         } catch (SQLException ex) {
             System.out.println("Error en el modelo: método iniciarSesion " + ex);
@@ -98,6 +121,7 @@ public class Usuarios {
         return resultadodelInicioSesion;
     }
     
+    // Método para actualizar la contraseña de un usuario
     public static boolean actualizarContrasena(String nuevaContrasena) {
         Connection conexion = ClaseConexion.getConexion();
         boolean actualizacionExitosa = false;
@@ -122,6 +146,7 @@ public class Usuarios {
         return actualizacionExitosa;
     }
     
+    // Método para actualizar la información de un usuario en la base de datos
     public void actualizarUsuario(JTable tabla) {
         Connection conexion = ClaseConexion.getConexion();
         int filaSeleccionada = tabla.getSelectedRow();
@@ -142,6 +167,7 @@ public class Usuarios {
         }
     }
     
+    // Método para eliminar un usuario de la base de datos
     public void eliminarUsuario(JTable tabla) {
         Connection conexion = ClaseConexion.getConexion();
         int filaSeleccionada = tabla.getSelectedRow();
@@ -161,6 +187,7 @@ public class Usuarios {
         }
     }
     
+    // Método para mostrar todos los usuarios en una tabla
     public void mostrarUsuariosTB(JTable tabla) {
         Connection conexion = ClaseConexion.getConexion();
         DefaultTableModel modeloUsuarios = new DefaultTableModel();
@@ -183,6 +210,7 @@ public class Usuarios {
         }
     }
     
+    // Método para cargar los datos de un usuario seleccionado en la tabla a los campos de texto
     public void cargarDatosTabla(panelUsuarios vista) {
         int filaSeleccionada = vista.jTBusuariosCRUD.getSelectedRow();
         if (filaSeleccionada != -1) {
