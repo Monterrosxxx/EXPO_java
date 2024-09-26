@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import vista.FrmInicioEntrenador;
+import vista.panelConsejosE;
 
 
 public class ctrlInicioEntrenador implements MouseListener{
@@ -21,6 +22,21 @@ public class ctrlInicioEntrenador implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        
+        if(e.getSource() == vista.btnAggConsejos){
+            //1-Creo un objeto del panel que quiero mostrar
+            panelConsejosE  objConsejos = new panelConsejosE();
+            
+            //2- Limpio el panel contendor (por si acaso)
+            vista.jpContenedorEntrenador.removeAll();
+            //3- muestro el panel que quiero
+            vista.jpContenedorEntrenador.add(objConsejos);
+            
+            //4- Refrescar todo
+            vista.jpContenedorEntrenador.revalidate();
+            vista.jpContenedorEntrenador.repaint();
+        }
+        
     }
 
     @Override
