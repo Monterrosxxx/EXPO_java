@@ -1,4 +1,3 @@
-// Importaciones necesarias para el controlador
 package controlador;
 
 import java.awt.event.MouseEvent;
@@ -8,10 +7,8 @@ import modelo.Entrenador;
 import modelo.cbEspecialidad;
 import vista.panelEntrenador;
 
-// Definición de la clase controladora para el CRUD de entrenadores
 public class ctrlCRUDentrenador implements MouseListener {
     
-    // Declaración de variables de clase
     cbEspecialidad modeloEspecialidad;
     Entrenador modeloEntrenador;
     panelEntrenador vista;

@@ -65,13 +65,11 @@ public class ctrlInicioNutricionista implements MouseListener, ActionListener {
     // Método para agregar una nueva dieta
     private void agregarDieta() {
         try {
-            /*
             // Validar que no haya campos vacíos
             if (camposVacios()) {
                 JOptionPane.showMessageDialog(vista, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            */
             // Obtener los datos de los campos de texto
             String tipoDesayunos = vista.txtDesayuno.getText();
             String tipoAlmuerzos = vista.txtAlmuerzo.getText();
@@ -140,11 +138,10 @@ public class ctrlInicioNutricionista implements MouseListener, ActionListener {
     private void actualizarDieta() {
         try {
             // Validar que no haya campos vacíos
-            /*
             if (camposVacios()) {
                 JOptionPane.showMessageDialog(vista, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
-            }*/
+            }
 
             // Obtener la fila seleccionada
             int filaSeleccionada = vista.jTBdietaCRUD.getSelectedRow();
@@ -207,16 +204,15 @@ public class ctrlInicioNutricionista implements MouseListener, ActionListener {
         vista.cbIdCliente.setSelectedIndex(0);
     }
     
-    /*
+
     // Método para verificar si hay campos vacíos en el formulario
     private boolean camposVacios() {
         return vista.txtDesayuno.getText().isEmpty() ||
                vista.txtAlmuerzo.getText().isEmpty() ||
                vista.txtCena.getText().isEmpty() ||
-               vista.txtRefrigerios.getText().isEmpty() ||
-               vista.cbIdCliente.getSelectedIndex() == 0;
+               vista.txtRefrigerios.getText().isEmpty();
     }
-    */
+
     // Método para manejar los eventos de acción (selección en el comboBox)
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -226,9 +222,6 @@ public class ctrlInicioNutricionista implements MouseListener, ActionListener {
                 // Obtener el ID del cliente seleccionado
                 String ID = selectedItem.getIdCliente();
                 modeloClientes.setIdCliente(ID);
-                
-                // Aquí puedes agregar más lógica si necesitas hacer algo con el ID seleccionado
-                System.out.println("Cliente seleccionado: " + selectedItem.getNombreUsuario() + " (ID: " + ID + ")");
             }
         }
     }
