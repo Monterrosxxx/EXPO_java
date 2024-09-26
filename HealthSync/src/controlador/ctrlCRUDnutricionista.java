@@ -21,6 +21,7 @@ public class ctrlCRUDnutricionista implements MouseListener {
         vista.btnAgregar.addMouseListener(this);
         vista.btnEliminar.addMouseListener(this);
         vista.jTBnutricionistaCRUD.addMouseListener(this);
+        vista.btnLimpiar.addMouseListener(this);
         
         // Mostrar los datos de los nutricionistas al iniciar
         modelo.mostrarDatosNutricionista(vista.jTBnutricionistaCRUD);
@@ -38,14 +39,8 @@ public class ctrlCRUDnutricionista implements MouseListener {
         } else if (e.getSource() == vista.jTBnutricionistaCRUD) {
             // Cargar datos del nutricionista seleccionado
             modelo.cargarDatosNutricionista(vista);
-        }
-        
-        if(e.getSource() == vista.btnLimpiar){
-            vista.txtNombreNutri.setText("");
-            vista.txtEdadNutri.setText("");
-            vista.txtNumeroNutri.setText("");
-            vista.txtCorreoNutri.setText("");
-            vista.txtClaveNutri.setText("");
+        } else if (e.getSource() == vista.btnLimpiar) {
+            limpiarCampos();
         }
     }
 
@@ -58,11 +53,18 @@ public class ctrlCRUDnutricionista implements MouseListener {
                 return;
             }
 
+            // Verificar si el correo ya está en uso
+            String correo = vista.txtCorreoNutri.getText();
+            if (modelo.verificarCorreo(correo)) {
+                JOptionPane.showMessageDialog(vista, "Correo en uso", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
             // Obtener datos de la vista
             modelo.setNombre(vista.txtNombreNutri.getText());
             modelo.setEdad(Integer.parseInt(vista.txtEdadNutri.getText()));
             modelo.setNumero(vista.txtNumeroNutri.getText());
-            modelo.setCorreo(vista.txtCorreoNutri.getText());
+            modelo.setCorreo(correo);
             modelo.setClave(vista.txtClaveNutri.getText());
 
             // Insertar nutricionista en la base de datos
@@ -127,11 +129,19 @@ public class ctrlCRUDnutricionista implements MouseListener {
             int idNutricionista = Integer.parseInt(vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 0).toString());
             modelo.setIdNutricionista(idNutricionista);
 
+            // Verificar si el nuevo correo ya está en uso (excluyendo el correo actual del nutricionista)
+            String nuevoCorreo = vista.txtCorreoNutri.getText();
+            String correoActual = vista.jTBnutricionistaCRUD.getValueAt(filaSeleccionada, 2).toString();
+            if (!nuevoCorreo.equals(correoActual) && modelo.verificarCorreo(nuevoCorreo)) {
+                JOptionPane.showMessageDialog(vista, "Correo en uso", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
             // Obtener datos de la vista
             modelo.setNombre(vista.txtNombreNutri.getText());
             modelo.setEdad(Integer.parseInt(vista.txtEdadNutri.getText()));
             modelo.setNumero(vista.txtNumeroNutri.getText());
-            modelo.setCorreo(vista.txtCorreoNutri.getText());
+            modelo.setCorreo(nuevoCorreo);
             modelo.setClave(vista.txtClaveNutri.getText());
 
             // Actualizar nutricionista en la base de datos

@@ -216,7 +216,7 @@ public class Entrenador {
             String sqlUsuario = "UPDATE Usuarios SET correo = ?, clave = ?, nombre = ? WHERE idUsuario = ?";
             pstmt = conexion.prepareStatement(sqlUsuario);
             pstmt.setString(1, getCorreo());
-            pstmt.setString(2, getClave());
+            pstmt.setString(2, convertirSHA256(getClave()));
             pstmt.setString(3, getNombre());
             pstmt.setInt(4, idUsuario);
             pstmt.executeUpdate();
@@ -236,9 +236,9 @@ public class Entrenador {
     public void mostrarEntrenador(JTable Tabla) {
         Connection conexion = ClaseConexion.getConexion();
         DefaultTableModel modeloEntrenador = new DefaultTableModel();
-        modeloEntrenador.setColumnIdentifiers(new Object[]{"idEntrenador", "Nombre", "Edad", "Número", "idEspecialidad", "idUsuario"});
+        modeloEntrenador.setColumnIdentifiers(new Object[]{"idEntrenador", "Nombre", "Edad", "Número", "idEspecialidad", "idUsuario", "Correo", "Clave"});
         try {
-            String sql = "SELECT e.idEntrenador, u.nombre, e.edad, e.numero, e.idEspecialidad, e.idUsuario " +
+            String sql = "SELECT e.idEntrenador, u.nombre, e.edad, e.numero, e.idEspecialidad, e.idUsuario, u.correo, u.clave " +
                          "FROM Entrenador e " +
                          "INNER JOIN Usuarios u ON e.idUsuario = u.idUsuario";
             PreparedStatement pstmt = conexion.prepareStatement(sql);
@@ -250,7 +250,9 @@ public class Entrenador {
                     rs.getInt("edad"),
                     rs.getString("numero"),
                     rs.getInt("idEspecialidad"),
-                    rs.getInt("idUsuario")
+                    rs.getInt("idUsuario"),
+                    rs.getString("correo"),
+                    rs.getString("clave")
                 });
             }
             Tabla.setModel(modeloEntrenador);
@@ -269,11 +271,15 @@ public class Entrenador {
             setNumero(vista.jTBentrenadorCRUD.getValueAt(filaSeleccionada, 3).toString());
             setIdEspecialidad(Integer.parseInt(vista.jTBentrenadorCRUD.getValueAt(filaSeleccionada, 4).toString()));
             setIdUsuario(Integer.parseInt(vista.jTBentrenadorCRUD.getValueAt(filaSeleccionada, 5).toString()));
+            setCorreo(vista.jTBentrenadorCRUD.getValueAt(filaSeleccionada, 6).toString());
+            setClave(vista.jTBentrenadorCRUD.getValueAt(filaSeleccionada, 7).toString());
 
             vista.txtNombreEntrenador1.setText(getNombre());
             vista.txtEdadEntrenador.setText(String.valueOf(getEdad()));
             vista.txtNumeroTelEntrenador.setText(getNumero());
             vista.cbEspecialidad.setSelectedItem(getIdEspecialidad());
+            vista.txtCorreoEntrenador.setText(getCorreo());
+            vista.txtClave.setText(getClave());
         }
     }
 
@@ -294,5 +300,35 @@ public class Entrenador {
         }
 
         return sb.toString();
+    }
+
+    // Método para verificar si el correo ya existe en la base de datos
+    public boolean verificarCorreo(String correo) {
+        Connection conexion = ClaseConexion.getConexion();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        boolean correoExiste = false;
+
+        try {
+            String sql = "SELECT COUNT(*) FROM Usuarios WHERE correo = ?";
+            pstmt = conexion.prepareStatement(sql);
+            pstmt.setString(1, correo);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                correoExiste = rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al verificar correo: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar recursos: " + e);
+            }
+        }
+
+        return correoExiste;
     }
 }

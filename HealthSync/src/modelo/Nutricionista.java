@@ -1,4 +1,3 @@
-// Importaciones necesarias para la clase
 package modelo;
 
 import java.sql.Connection;
@@ -217,7 +216,7 @@ public class Nutricionista {
             String sqlUsuario = "UPDATE Usuarios SET correo = ?, clave = ?, nombre = ? WHERE idUsuario = ?";
             pstmt = conexion.prepareStatement(sqlUsuario);
             pstmt.setString(1, getCorreo());
-            pstmt.setString(2, getClave());
+            pstmt.setString(2, convertirSHA256(getClave()));
             pstmt.setString(3, getNombre());
             pstmt.setInt(4, idUsuario);
             pstmt.executeUpdate();
@@ -280,4 +279,35 @@ public class Nutricionista {
             vista.txtNumeroNutri.setText(getNumero());
         }
     }
+    
+    // Método para verificar si el correo ya existe en la base de datos
+    public boolean verificarCorreo(String correo) {
+        Connection conexion = ClaseConexion.getConexion();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        boolean correoExiste = false;
+
+        try {
+            String sql = "SELECT COUNT(*) FROM Usuarios WHERE correo = ?";
+            pstmt = conexion.prepareStatement(sql);
+            pstmt.setString(1, correo);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                correoExiste = rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al verificar correo: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar recursos: " + e);
+            }
+        }
+
+        return correoExiste;
+    }
+    
 }

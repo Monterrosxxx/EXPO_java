@@ -77,6 +77,12 @@ public class ctrlCRUDentrenador implements MouseListener {
             String numero = vista.txtNumeroTelEntrenador.getText();
             String clave = vista.txtClave.getText();
             
+            // Verificar si el correo ya existe
+            if (modeloEntrenador.verificarCorreo(correo)) {
+                JOptionPane.showMessageDialog(vista, "Correo ya en uso", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
             // Obtener el idEspecialidad seleccionado
             int idEspecialidad = obtenerIdEspecialidadSeleccionado();
             if (idEspecialidad == -1) {
@@ -166,6 +172,12 @@ public class ctrlCRUDentrenador implements MouseListener {
             String numero = vista.txtNumeroTelEntrenador.getText();
             String clave = vista.txtClave.getText();
             
+            // Comentario: Nuevo código para verificar si el correo ya existe (excluyendo el correo actual del entrenador)
+            if (!correo.equals(modeloEntrenador.getCorreo()) && modeloEntrenador.verificarCorreo(correo)) {
+                JOptionPane.showMessageDialog(vista, "Correo ya en uso", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
             // Obtener el idEspecialidad seleccionado
             int idEspecialidad = obtenerIdEspecialidadSeleccionado();
             if (idEspecialidad == -1) {
@@ -225,8 +237,7 @@ public class ctrlCRUDentrenador implements MouseListener {
                vista.txtEdadEntrenador.getText().isEmpty() ||
                vista.txtCorreoEntrenador.getText().isEmpty() ||
                vista.txtNumeroTelEntrenador.getText().isEmpty() ||
-               vista.txtClave.getText().isEmpty() ||
-               vista.cbEspecialidad.getSelectedIndex() == 0;
+               vista.txtClave.getText().isEmpty();
     }
     
     @Override
