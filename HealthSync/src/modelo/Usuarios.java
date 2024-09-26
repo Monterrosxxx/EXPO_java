@@ -1,7 +1,5 @@
-// Paquete al que pertenece la clase
 package modelo;
 
-// Importaciones necesarias para el funcionamiento de la clase
 import java.sql.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -9,7 +7,6 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import vista.panelUsuarios;
 
-// Definición de la clase Usuarios
 public class Usuarios {
     
     // Atributos de la clase
@@ -17,7 +14,8 @@ public class Usuarios {
     private String clave;
     private String nombre;
     private static String correoRecuperacion;
-    private int idRol; // Nuevo atributo para almacenar el rol del usuario
+    // Nuevo atributo para almacenar el rol del usuario
+    private int idRol; 
 
     // Métodos getter y setter para cada atributo
     public String getCorreo() {

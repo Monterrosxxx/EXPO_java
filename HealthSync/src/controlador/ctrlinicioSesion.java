@@ -1,7 +1,5 @@
-// Paquete al que pertenece la clase
 package controlador;
 
-// Importaciones necesarias para el funcionamiento de la clase
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
@@ -13,7 +11,6 @@ import static vista.FrmInicioNutricioniosta.initNutricionista;
 import static vista.Registrarse.initRegistrarse;
 import vista.bienvenida;
 
-// Definición de la clase ctrlinicioSesion que implementa MouseListener
 public class ctrlinicioSesion implements MouseListener {
     
     // Atributos de la clase
@@ -31,7 +28,6 @@ public class ctrlinicioSesion implements MouseListener {
         vista.btnRecuperarContrasena.addMouseListener(this);
     }
 
-    // Método que se ejecuta cuando se hace clic en un componente
     @Override
     public void mouseClicked(MouseEvent e) {
         
