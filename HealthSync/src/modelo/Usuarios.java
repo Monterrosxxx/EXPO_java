@@ -14,7 +14,6 @@ public class Usuarios {
     private String clave;
     private String nombre;
     private static String correoRecuperacion;
-    // Nuevo atributo para almacenar el rol del usuario
     private int idRol; 
 
     // Métodos getter y setter para cada atributo
@@ -50,12 +49,10 @@ public class Usuarios {
         return correoRecuperacion;
     }
 
-    // Nuevo getter para idRol
     public int getIdRol() {
         return idRol;
     }
 
-    // Nuevo setter para idRol
     public void setIdRol(int idRol) {
         this.idRol = idRol;
     }
@@ -109,8 +106,6 @@ public class Usuarios {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 resultadodelInicioSesion = true;
-                // Aqui se guarda el idRol del usuario para los niveles de Rol
-                //en la app
                 setIdRol(resultSet.getInt("idRol")); 
             }
         } catch (SQLException ex) {
@@ -185,14 +180,14 @@ public class Usuarios {
         }
     }
     
-    // Método para mostrar todos los usuarios en una tabla
+    // Método para mostrar solo los usuarios con idRol = 4
     public void mostrarUsuariosTB(JTable tabla) {
         Connection conexion = ClaseConexion.getConexion();
         DefaultTableModel modeloUsuarios = new DefaultTableModel();
         modeloUsuarios.setColumnIdentifiers(new Object[]{"idUsuario", "Correo", "Contraseña", "Nombre", "idRol"});
         try {
-            Statement statement = conexion.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM Usuarios");
+            PreparedStatement statement = conexion.prepareStatement("SELECT * FROM Usuarios WHERE idRol = 4");
+            ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 modeloUsuarios.addRow(new Object[]{
                     rs.getString("idUsuario"), 

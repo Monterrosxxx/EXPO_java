@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import modelo.Dieta;
 import modelo.cbClientes;
 import vista.FrmInicioNutricioniosta;
+import static vista.bienvenida.initBienvenida;
 
 public class ctrlInicioNutricionista implements MouseListener, ActionListener {
     
@@ -28,6 +29,7 @@ public class ctrlInicioNutricionista implements MouseListener, ActionListener {
         this.vista.btnActualizarDieta.addMouseListener(this);
         this.vista.btnLimpiarDieta.addMouseListener(this);
         this.vista.jTBdietaCRUD.addMouseListener(this);
+        this.vista.btnCerrarSesion.addMouseListener(this);
 
         // Cargar los nombres de los clientes en el comboBox
         this.modeloClientes.CargarComboClientes(this.vista.cbIdCliente);
@@ -59,6 +61,11 @@ public class ctrlInicioNutricionista implements MouseListener, ActionListener {
         // Si el evento fue dado en el botón "Limpiar"
         else if (e.getSource() == vista.btnLimpiarDieta) {
             limpiarCampos();
+        }
+        
+        if(e.getSource() == vista.btnCerrarSesion){
+            initBienvenida();
+            vista.dispose();
         }
     }
 

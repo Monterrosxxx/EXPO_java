@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import vista.FrmInicioEntrenador;
+import static vista.bienvenida.initBienvenida;
 import vista.panelConsejosE;
 
 
@@ -35,6 +36,11 @@ public class ctrlInicioEntrenador implements MouseListener{
             //4- Refrescar todo
             vista.jpContenedorEntrenador.revalidate();
             vista.jpContenedorEntrenador.repaint();
+        }
+        
+        if(e.getSource() == vista.btnCerrarSesion){
+            initBienvenida();
+            vista.dispose();
         }
         
     }

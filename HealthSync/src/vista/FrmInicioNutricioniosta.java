@@ -58,13 +58,14 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
         cbIdCliente = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        btnVerClientes = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         btnAgregarDieta = new javax.swing.JButton();
         btnActualizarDieta = new javax.swing.JButton();
         btnEliminarDieta = new javax.swing.JButton();
         btnLimpiarDieta = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTBdietaCRUD = new javax.swing.JTable();
+        btnVerClientes1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -139,10 +140,15 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
         jLabel9.setText("Agrega una dieta");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
 
-        btnVerClientes.setBackground(new java.awt.Color(118, 99, 242));
-        btnVerClientes.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        btnVerClientes.setText("Clientes");
-        jPanel1.add(btnVerClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 181, 54));
+        btnCerrarSesion.setBackground(new java.awt.Color(118, 99, 242));
+        btnCerrarSesion.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 54));
 
         btnAgregarDieta.setBackground(new java.awt.Color(118, 99, 242));
         btnAgregarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
@@ -184,6 +190,11 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 1420, 160));
 
+        btnVerClientes1.setBackground(new java.awt.Color(118, 99, 242));
+        btnVerClientes1.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnVerClientes1.setText("Clientes");
+        jPanel1.add(btnVerClientes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 181, 54));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -192,9 +203,7 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -203,6 +212,10 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
     private void btnLimpiarDietaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarDietaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLimpiarDietaActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,9 +255,10 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizarDieta;
     public javax.swing.JButton btnAgregarDieta;
+    public javax.swing.JButton btnCerrarSesion;
     public javax.swing.JButton btnEliminarDieta;
     public javax.swing.JButton btnLimpiarDieta;
-    public javax.swing.JButton btnVerClientes;
+    public javax.swing.JButton btnVerClientes1;
     public javax.swing.JComboBox<String> cbIdCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
