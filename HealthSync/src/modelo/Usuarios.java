@@ -82,7 +82,7 @@ public class Usuarios {
         Connection conexion = ClaseConexion.getConexion();
         
         try{
-            PreparedStatement addUsuarios = conexion.prepareStatement("INSERT INTO Usuarios (correo, clave, nombre, idRol) VALUES (?, ?, ?, 1)");
+            PreparedStatement addUsuarios = conexion.prepareStatement("INSERT INTO Usuarios (correo, clave, nombre, idRol) VALUES (?, ?, ?, 4)");
             addUsuarios.setString(1, getCorreo());
             addUsuarios.setString(2, convertirSHA256(getClave())); 
             addUsuarios.setString(3, getNombre());
@@ -148,7 +148,7 @@ public class Usuarios {
             try { 
                 PreparedStatement updateProduct = conexion.prepareStatement("UPDATE Usuarios set correo= ?, clave = ?, nombre = ? where idUsuario = ?");
                 updateProduct.setString(1, getCorreo());
-                updateProduct.setString(2, getClave());
+                updateProduct.setString(2, convertirSHA256(getClave()));
                 updateProduct.setString(3, getNombre());
                 updateProduct.setString(4, idUsuario);
                 updateProduct.executeUpdate();
@@ -215,5 +215,35 @@ public class Usuarios {
             vista.txtContrasenaCRUD.setText(claveTB);
             vista.txtNombreCRUD.setText(nombreTB);
         }
+    }
+    
+    // Método para verificar si el correo ya existe en la base de datos
+    public boolean verificarCorreo(String correo) {
+        Connection conexion = ClaseConexion.getConexion();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        boolean correoExiste = false;
+
+        try {
+            String sql = "SELECT COUNT(*) FROM Usuarios WHERE correo = ?";
+            pstmt = conexion.prepareStatement(sql);
+            pstmt.setString(1, correo);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                correoExiste = rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al verificar correo: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar recursos: " + e);
+            }
+        }
+
+        return correoExiste;
     }
 }

@@ -5,6 +5,11 @@ import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import vista.panelNutricionista;
 import modelo.Nutricionista;
+import javax.swing.JTextField;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 
 public class ctrlCRUDnutricionista implements MouseListener {
     
@@ -25,6 +30,43 @@ public class ctrlCRUDnutricionista implements MouseListener {
         
         // Mostrar los datos de los nutricionistas al iniciar
         modelo.mostrarDatosNutricionista(vista.jTBnutricionistaCRUD);
+
+        // Aplicar filtros a los campos de texto
+        aplicarFiltroEdad(vista.txtEdadNutri);
+        aplicarFiltroTelefono(vista.txtNumeroNutri);
+    }
+
+    // Método para aplicar filtro al campo de edad
+    private void aplicarFiltroEdad(JTextField textField) {
+        ((AbstractDocument) textField.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+                String newText = fb.getDocument().getText(0, fb.getDocument().getLength()) + text;
+                if ((newText.matches("\\d*") && newText.length() <= 3)) {
+                    super.replace(fb, offset, length, text, attrs);
+                    if (newText.length() == 3) {
+                        int edad = Integer.parseInt(newText);
+                        if (edad < 20 || edad > 100) {
+                            JOptionPane.showMessageDialog(vista, "La edad tiene que ser entre 20 y 100 años", "Error", JOptionPane.ERROR_MESSAGE);
+                            fb.remove(0, 3);
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Método para aplicar filtro al campo de teléfono
+    private void aplicarFiltroTelefono(JTextField textField) {
+        ((AbstractDocument) textField.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+                String newText = fb.getDocument().getText(0, fb.getDocument().getLength()) + text;
+                if ((newText.matches("\\d*") && newText.length() <= 8)) {
+                    super.replace(fb, offset, length, text, attrs);
+                }
+            }
+        });
     }
 
     // Método principal para manejar eventos de clic
@@ -176,7 +218,6 @@ public class ctrlCRUDnutricionista implements MouseListener {
                vista.txtClaveNutri.getText().isEmpty();
     }
 
-    // Métodos no utilizados de la interfaz MouseListener
     @Override
     public void mousePressed(MouseEvent e) {}
     @Override

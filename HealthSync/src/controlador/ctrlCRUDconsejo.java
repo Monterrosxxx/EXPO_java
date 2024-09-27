@@ -11,7 +11,6 @@ import vista.panelConsejosE;
 
 public class ctrlCRUDconsejo implements MouseListener, ActionListener {
     
-    // Atributos de la clase
     panelConsejosE vista;
     cbClientes modeloClientes;
     Consejos modeloConsejo;
@@ -37,7 +36,6 @@ public class ctrlCRUDconsejo implements MouseListener, ActionListener {
         this.modeloConsejo.mostrarConsejoTB(this.vista.jTBconsejoCRUD);
     }
 
-    // Método para manejar eventos de clic
     @Override
     public void mouseClicked(MouseEvent e) {
         // Si el evento fue dado en el botón "Agregar Consejo"
@@ -214,7 +212,6 @@ public class ctrlCRUDconsejo implements MouseListener, ActionListener {
         }
     }
 
-    // Métodos de la interfaz MouseListener que no se utilizan pero deben implementarse
     @Override
     public void mousePressed(MouseEvent e) {}
     

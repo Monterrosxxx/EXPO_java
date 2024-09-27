@@ -6,6 +6,11 @@ import javax.swing.JOptionPane;
 import modelo.Entrenador;
 import modelo.cbEspecialidad;
 import vista.panelEntrenador;
+import javax.swing.JTextField;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 
 public class ctrlCRUDentrenador implements MouseListener {
     
@@ -33,6 +38,43 @@ public class ctrlCRUDentrenador implements MouseListener {
         
         // Mostrar los entrenadores en la tabla
         modeloEntrenador.mostrarEntrenador(vista.jTBentrenadorCRUD);
+
+        // Aplicar filtros a los campos de texto
+        aplicarFiltroEdad(vista.txtEdadEntrenador);
+        aplicarFiltroTelefono(vista.txtNumeroTelEntrenador);
+    }
+    
+    // Método para aplicar filtro al campo de edad
+    private void aplicarFiltroEdad(JTextField textField) {
+        ((AbstractDocument) textField.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+                String newText = fb.getDocument().getText(0, fb.getDocument().getLength()) + text;
+                if ((newText.matches("\\d*") && newText.length() <= 3)) {
+                    super.replace(fb, offset, length, text, attrs);
+                    if (newText.length() == 3) {
+                        int edad = Integer.parseInt(newText);
+                        if (edad < 20 || edad > 100) {
+                            JOptionPane.showMessageDialog(vista, "La edad tiene que ser entre 20 y 100 años", "Error", JOptionPane.ERROR_MESSAGE);
+                            fb.remove(0, 3);
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Método para aplicar filtro al campo de teléfono
+    private void aplicarFiltroTelefono(JTextField textField) {
+        ((AbstractDocument) textField.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+                String newText = fb.getDocument().getText(0, fb.getDocument().getLength()) + text;
+                if ((newText.matches("\\d*") && newText.length() <= 8)) {
+                    super.replace(fb, offset, length, text, attrs);
+                }
+            }
+        });
     }
     
     // Método para manejar eventos de clic
@@ -172,7 +214,7 @@ public class ctrlCRUDentrenador implements MouseListener {
             String numero = vista.txtNumeroTelEntrenador.getText();
             String clave = vista.txtClave.getText();
             
-            // Comentario: Nuevo código para verificar si el correo ya existe (excluyendo el correo actual del entrenador)
+            // Verificar si el correo ya existe (excluyendo el correo actual del entrenador)
             if (!correo.equals(modeloEntrenador.getCorreo()) && modeloEntrenador.verificarCorreo(correo)) {
                 JOptionPane.showMessageDialog(vista, "Correo ya en uso", "Error", JOptionPane.ERROR_MESSAGE);
                 return;

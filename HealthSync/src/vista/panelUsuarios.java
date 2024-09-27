@@ -32,6 +32,7 @@ public class panelUsuarios extends javax.swing.JPanel {
         btnEliminarUsuario = new javax.swing.JButton();
         btnEditarUsuario1 = new javax.swing.JButton();
         btnAgregarUsuario = new javax.swing.JButton();
+        btnVerClave = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -121,6 +122,10 @@ public class panelUsuarios extends javax.swing.JPanel {
         btnAgregarUsuario.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
         btnAgregarUsuario.setText("Agregar");
         add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 181, 54));
+
+        btnVerClave.setText("Ver");
+        btnVerClave.setToolTipText("");
+        add(btnVerClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtContrasenaCRUDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaCRUDActionPerformed
@@ -138,6 +143,7 @@ public class panelUsuarios extends javax.swing.JPanel {
     public javax.swing.JButton btnEliminarUsuario;
     public javax.swing.JButton btnLimpiarUsuarios;
     public javax.swing.JButton btnSalirInicio;
+    public javax.swing.JButton btnVerClave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
