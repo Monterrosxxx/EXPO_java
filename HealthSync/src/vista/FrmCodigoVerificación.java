@@ -40,6 +40,8 @@ public class FrmCodigoVerificación extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtCodigoVerificacion = new javax.swing.JTextField();
         btnContinuarContraNueva = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,9 +49,13 @@ public class FrmCodigoVerificación extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(69, 69, 69));
-        jLabel1.setText("CODIGO DE VERIFICACION");
+        jLabel1.setText("Código de verificación");
 
-        txtCodigoVerificacion.setBackground(new java.awt.Color(221, 221, 221));
+        txtCodigoVerificacion.setBackground(new java.awt.Color(210, 203, 236));
+        txtCodigoVerificacion.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 24)); // NOI18N
+        txtCodigoVerificacion.setForeground(new java.awt.Color(69, 69, 69));
+        txtCodigoVerificacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCodigoVerificacion.setBorder(null);
         txtCodigoVerificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoVerificacionActionPerformed(evt);
@@ -60,6 +66,17 @@ public class FrmCodigoVerificación extends javax.swing.JFrame {
         btnContinuarContraNueva.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         btnContinuarContraNueva.setForeground(new java.awt.Color(255, 255, 255));
         btnContinuarContraNueva.setText("Continuar");
+        btnContinuarContraNueva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContinuarContraNuevaActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/98397246-1329-43a6-bc72-98092880deb4.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(46, 52, 64));
+        jLabel2.setText("Revisa la bandeja de entrada de tu correo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -68,26 +85,34 @@ public class FrmCodigoVerificación extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(505, 505, 505)
+                        .addGap(535, 535, 535)
                         .addComponent(btnContinuarContraNueva, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(378, 378, 378)
-                        .addComponent(jLabel1))
+                        .addGap(422, 422, 422)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addComponent(txtCodigoVerificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(412, Short.MAX_VALUE))
+                        .addGap(434, 434, 434)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(txtCodigoVerificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(446, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addGap(94, 94, 94)
-                .addComponent(txtCodigoVerificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(189, 189, 189)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(22, 22, 22)
+                .addComponent(txtCodigoVerificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(btnContinuarContraNueva, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -109,6 +134,10 @@ public class FrmCodigoVerificación extends javax.swing.JFrame {
     private void txtCodigoVerificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoVerificacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoVerificacionActionPerformed
+
+    private void btnContinuarContraNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarContraNuevaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContinuarContraNuevaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +178,8 @@ public class FrmCodigoVerificación extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnContinuarContraNueva;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txtCodigoVerificacion;
     // End of variables declaration//GEN-END:variables

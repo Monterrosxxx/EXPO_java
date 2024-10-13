@@ -72,9 +72,9 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/efe0e8dc-329d-4bd0-9cc5-50cb5372c7a6.png"))); // NOI18N
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 22)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(69, 69, 69));
-        jLabel5.setText("REGISTRATE");
+        jLabel5.setText("Crea un cuenta");
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
@@ -82,7 +82,9 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel6.setText("Nombre");
 
         txtNombreRegistro.setBackground(new java.awt.Color(210, 203, 236));
-        txtNombreRegistro.setBorder(null);
+        txtNombreRegistro.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtNombreRegistro.setForeground(new java.awt.Color(69, 69, 69));
+        txtNombreRegistro.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
@@ -90,7 +92,9 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel7.setText("Correo");
 
         txtCorreoRegistro.setBackground(new java.awt.Color(210, 203, 236));
-        txtCorreoRegistro.setBorder(null);
+        txtCorreoRegistro.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtCorreoRegistro.setForeground(new java.awt.Color(69, 69, 69));
+        txtCorreoRegistro.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
@@ -98,12 +102,14 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel8.setText("Contraseña");
 
         txtContrasenaRegistro.setBackground(new java.awt.Color(210, 203, 236));
-        txtContrasenaRegistro.setBorder(null);
+        txtContrasenaRegistro.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtContrasenaRegistro.setForeground(new java.awt.Color(69, 69, 69));
+        txtContrasenaRegistro.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
 
         btnAccederdelRegistro.setBackground(new java.awt.Color(46, 52, 64));
         btnAccederdelRegistro.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         btnAccederdelRegistro.setForeground(new java.awt.Color(255, 255, 255));
-        btnAccederdelRegistro.setText("Acceder");
+        btnAccederdelRegistro.setText("Crear cuenta");
         btnAccederdelRegistro.setBorder(null);
         btnAccederdelRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +122,9 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel9.setText("Confirmar contraseña");
 
         txtConfirmarContrasena.setBackground(new java.awt.Color(210, 203, 236));
-        txtConfirmarContrasena.setBorder(null);
+        txtConfirmarContrasena.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtConfirmarContrasena.setForeground(new java.awt.Color(69, 69, 69));
+        txtConfirmarContrasena.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
 
         jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(69, 69, 69));
@@ -170,33 +178,30 @@ public class Registrarse extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jLabel5)
-                        .addGap(12, 12, 12)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel6)
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtNombreRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel7)))
-                        .addGap(18, 18, 18)
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel3)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCorreoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(30, 30, 30)
                         .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtContrasenaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(30, 30, 30)
                         .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addComponent(btnAccederdelRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

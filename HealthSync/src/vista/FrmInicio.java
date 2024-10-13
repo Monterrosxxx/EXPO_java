@@ -49,7 +49,6 @@ public class FrmInicio extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnUsuarios.setBackground(new java.awt.Color(255, 153, 255));
-        btnUsuarios.setForeground(new java.awt.Color(0, 0, 0));
         btnUsuarios.setText("Usuarios");
         btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +58,6 @@ public class FrmInicio extends javax.swing.JFrame {
         jPanel1.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 165, 138, 41));
 
         btnEntrenador.setBackground(new java.awt.Color(255, 153, 255));
-        btnEntrenador.setForeground(new java.awt.Color(0, 0, 0));
         btnEntrenador.setText("Entrenador");
         btnEntrenador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +67,6 @@ public class FrmInicio extends javax.swing.JFrame {
         jPanel1.add(btnEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 281, 138, 41));
 
         btnNutricionista.setBackground(new java.awt.Color(255, 153, 255));
-        btnNutricionista.setForeground(new java.awt.Color(0, 0, 0));
         btnNutricionista.setText("Nutricionista");
         btnNutricionista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +76,6 @@ public class FrmInicio extends javax.swing.JFrame {
         jPanel1.add(btnNutricionista, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 400, 138, 41));
 
         btnCerrarSesion.setBackground(new java.awt.Color(255, 153, 255));
-        btnCerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
         btnCerrarSesion.setText("Cerrar Sesión");
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,14 +93,18 @@ public class FrmInicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();

@@ -17,8 +17,8 @@ public class envioCorreos {
         properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
         
         // Credenciales de la cuenta de correo
-        final String myAccountEmail = "rjmj.007.009@gmail.com";
-        final String password = "niam jscy nfrf arpj";
+        final String myAccountEmail = "somos.healthsync@gmail.com";
+        final String password = "f mi w f x k b m u d j b r k g";
         
         // Crear sesión
         Session session = Session.getInstance(properties, new Authenticator() {

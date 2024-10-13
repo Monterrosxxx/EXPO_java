@@ -43,24 +43,25 @@ public class Agrgar_nutricionista extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 0, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(69, 69, 69));
         jLabel3.setText("Nombre");
 
-        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 0, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(69, 69, 69));
         jLabel4.setText("Apellidos");
 
-        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(210, 203, 236));
-        jTextField1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 16)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(69, 69, 69));
-        jTextField1.setBorder(null);
+        jTextField1.setActionCommand("<Not Set>");
+        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
 
         jTextField2.setBackground(new java.awt.Color(210, 203, 236));
-        jTextField2.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 16)); // NOI18N
+        jTextField2.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(69, 69, 69));
-        jTextField2.setBorder(null);
+        jTextField2.setActionCommand("<Not Set>");
+        jTextField2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -89,9 +90,9 @@ public class Agrgar_nutricionista extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(69, 69, 69));
         jLabel5.setText("BIENVENIDO");
 
-        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 29)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 22)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(69, 69, 69));
-        jLabel2.setText("Ingresar nuevo nutricionista");
+        jLabel2.setText("Ingresar un nuevo nutricionista");
 
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(69, 69, 69));
@@ -107,25 +108,26 @@ public class Agrgar_nutricionista extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(51, 51, 51))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(35, 35, 35)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -138,14 +140,15 @@ public class Agrgar_nutricionista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
                         .addComponent(jLabel2)
-                        .addGap(62, 62, 62)
+                        .addGap(24, 24, 24)
                         .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
+                        .addGap(43, 43, 43)
                         .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
