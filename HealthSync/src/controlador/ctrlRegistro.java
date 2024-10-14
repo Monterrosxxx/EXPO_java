@@ -17,12 +17,19 @@ public class ctrlRegistro implements MouseListener {
         this.vista = Vista;
 
         vista.btnAccederdelRegistro.addMouseListener(this);
+        vista.btnSalirRegistro.addMouseListener(this);
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         
-        // Validaciones
+        if(e.getSource() == vista.btnSalirRegistro){
+            initBienvenida();
+            vista.dispose();
+        }
+
+        if(e.getSource() == vista.btnAccederdelRegistro){
+            // Validaciones
         // Que el nombre no esté vacío
         if (vista.txtNombreRegistro.getText().isEmpty()) {
             JOptionPane.showMessageDialog(vista, "El nombre no puede estar vacío");
@@ -47,7 +54,6 @@ public class ctrlRegistro implements MouseListener {
             return;
         }
         
-        if(e.getSource() == vista.btnAccederdelRegistro){
             modelo.setNombre(vista.txtNombreRegistro.getText());
             modelo.setCorreo(vista.txtCorreoRegistro.getText());
             modelo.setClave(vista.txtContrasenaRegistro.getText());
@@ -60,7 +66,6 @@ public class ctrlRegistro implements MouseListener {
             initBienvenida();
             vista.dispose();
         }
-        
     }
 
     @Override

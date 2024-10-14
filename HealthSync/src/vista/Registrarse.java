@@ -52,7 +52,7 @@ public class Registrarse extends javax.swing.JFrame {
         btnAccederdelRegistro = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         txtConfirmarContrasena = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        btnSalirRegistro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,9 +126,9 @@ public class Registrarse extends javax.swing.JFrame {
         txtConfirmarContrasena.setForeground(new java.awt.Color(69, 69, 69));
         txtConfirmarContrasena.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
 
-        jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(69, 69, 69));
-        jLabel10.setText("SALIR");
+        btnSalirRegistro.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnSalirRegistro.setForeground(new java.awt.Color(69, 69, 69));
+        btnSalirRegistro.setText("SALIR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,7 +161,7 @@ public class Registrarse extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2)
-                                    .addComponent(jLabel10))
+                                    .addComponent(btnSalirRegistro))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(31, 31, 31))))
         );
@@ -169,8 +169,8 @@ public class Registrarse extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
+                .addComponent(btnSalirRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,8 +259,8 @@ public class Registrarse extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAccederdelRegistro;
+    public javax.swing.JLabel btnSalirRegistro;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
