@@ -7,6 +7,7 @@ import javax.swing.text.PlainDocument;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import static vista.FrmContrasenaNueva.initContrasenaNueva;
+import static vista.FrmCorreodeRecuperacion.initCorreodeRecuperacion;
 
 public class ctrlCodigoVerificacion implements MouseListener {
     
@@ -15,6 +16,7 @@ public class ctrlCodigoVerificacion implements MouseListener {
     public ctrlCodigoVerificacion (FrmCodigoVerificación Vista) {
         this.vista = Vista;
         vista.btnContinuarContraNueva.addMouseListener(this);
+        vista.btnRegresarCorreo.addMouseListener(this);
         
         // Configurar el campo de texto para aceptar solo números
         vista.txtCodigoVerificacion.setDocument(new PlainDocument() {
@@ -44,6 +46,13 @@ public class ctrlCodigoVerificacion implements MouseListener {
             } else {
                 JOptionPane.showMessageDialog(vista, "ERROR: Código de verificación incorrecto", "Error", JOptionPane.ERROR_MESSAGE);
             }
+        }
+        
+        if(e.getSource() == vista.btnRegresarCorreo){
+            
+            initCorreodeRecuperacion();
+            vista.dispose();
+            
         }
     }
     

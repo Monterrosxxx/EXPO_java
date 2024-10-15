@@ -7,6 +7,7 @@ import vista.FrmCorreodeRecuperacion;
 import modelo.envioCorreos;
 import modelo.Usuarios;
 import static vista.FrmCodigoVerificación.initCodigoVerificacion;
+import static vista.bienvenida.initBienvenida;
 
 public class ctrlCorreoRecuperacion implements MouseListener {
     
@@ -16,6 +17,7 @@ public class ctrlCorreoRecuperacion implements MouseListener {
     public ctrlCorreoRecuperacion (FrmCorreodeRecuperacion Vista) {
         this.vista = Vista;
         vista.btnContinuarCodVeri.addMouseListener(this);
+        vista.btnRegresar.addMouseListener(this);
     }
     
     @Override
@@ -41,6 +43,11 @@ public class ctrlCorreoRecuperacion implements MouseListener {
             envioCorreos.enviarCorreo(recipient, subject, codigoGenerado);
             
             initCodigoVerificacion();
+            vista.dispose();
+        }
+        
+        if(e.getSource() == vista.btnRegresar){
+            initBienvenida();
             vista.dispose();
         }
     }

@@ -29,6 +29,7 @@ public class FrmCorreodeRecuperacion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnContinuarCodVeri = new javax.swing.JButton();
         txtCorreoRecuperacion = new javax.swing.JTextField();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -45,6 +46,21 @@ public class FrmCorreodeRecuperacion extends javax.swing.JFrame {
 
         txtCorreoRecuperacion.setBackground(new java.awt.Color(221, 221, 221));
 
+        btnRegresar.setBackground(new java.awt.Color(210, 203, 236));
+        btnRegresar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(69, 69, 69));
+        btnRegresar.setText("Regresar");
+        btnRegresar.setBorder(null);
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.setDefaultCapable(false);
+        btnRegresar.setFocusPainted(false);
+        btnRegresar.setFocusable(false);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -59,13 +75,18 @@ public class FrmCorreodeRecuperacion extends javax.swing.JFrame {
                         .addComponent(btnContinuarCodVeri))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(167, 167, 167)
-                        .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addContainerGap()
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -87,6 +108,10 @@ public class FrmCorreodeRecuperacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,6 +151,7 @@ public class FrmCorreodeRecuperacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnContinuarCodVeri;
+    public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txtCorreoRecuperacion;

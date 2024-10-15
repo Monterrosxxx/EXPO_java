@@ -15,6 +15,7 @@ public class ctrlContrasenaNueva implements MouseListener {
         this.vista = Vista;
         this.modelo = Modelo;
         vista.btnConfirmarContrairLogin.addMouseListener(this);
+        vista.btnRegresarBienvenida.addMouseListener(this);
     }
 
 
@@ -35,6 +36,13 @@ public class ctrlContrasenaNueva implements MouseListener {
             } else {
                 JOptionPane.showMessageDialog(vista, "No se pudo actualizar la contraseña. Por favor, intente de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
             }
+        }
+        
+        if(e.getSource() == vista.btnRegresarBienvenida){
+            
+            initBienvenida();
+            vista.dispose();
+            
         }
     }
 
