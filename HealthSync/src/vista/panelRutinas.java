@@ -4,6 +4,10 @@
  */
 package vista;
 
+import controlador.ctrlCRUDrutina;
+import modelo.Rutinas;
+import modelo.cbClientes;
+
 /**
  *
  * @author Estudiante
@@ -15,6 +19,12 @@ public class panelRutinas extends javax.swing.JPanel {
      */
     public panelRutinas() {
         initComponents();
+        
+        panelRutinas panel = this;
+        cbClientes modeloCliente = new cbClientes();
+        Rutinas modeloRutina = new Rutinas();
+        ctrlCRUDrutina controlador = new ctrlCRUDrutina(panel, modeloCliente, modeloRutina);
+        
     }
 
     /**

@@ -2,15 +2,18 @@ package controlador;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import modelo.Rutinas;
+import modelo.cbClientes;
 import vista.FrmInicioEntrenador;
 import static vista.bienvenida.initBienvenida;
 import vista.panelConsejosE;
+import vista.panelRutinas;
 
 
 public class ctrlInicioEntrenador implements MouseListener{
     
     FrmInicioEntrenador vista;
-    
+
     public ctrlInicioEntrenador (FrmInicioEntrenador vista){
         
         this.vista = vista;
@@ -32,6 +35,25 @@ public class ctrlInicioEntrenador implements MouseListener{
             vista.jpContenedorEntrenador.removeAll();
             //3- muestro el panel que quiero
             vista.jpContenedorEntrenador.add(objConsejos);
+            
+            //4- Refrescar todo
+            vista.jpContenedorEntrenador.revalidate();
+            vista.jpContenedorEntrenador.repaint();
+        }
+        
+        if(e.getSource() == vista.btnCerrarSesion){
+            initBienvenida();
+            vista.dispose();
+        }
+        
+        if(e.getSource() == vista.btnAggRutina){
+            //1-Creo un objeto del panel que quiero mostrar
+            panelRutinas objRutinas = new panelRutinas();
+            
+            //2- Limpio el panel contendor (por si acaso)
+            vista.jpContenedorEntrenador.removeAll();
+            //3- muestro el panel que quiero
+            vista.jpContenedorEntrenador.add(objRutinas);
             
             //4- Refrescar todo
             vista.jpContenedorEntrenador.revalidate();
