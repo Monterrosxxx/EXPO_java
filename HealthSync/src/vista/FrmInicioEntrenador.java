@@ -17,6 +17,7 @@ public class FrmInicioEntrenador extends javax.swing.JFrame {
      */
     public FrmInicioEntrenador() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public static void initEntrenador(){
@@ -44,6 +45,7 @@ public class FrmInicioEntrenador extends javax.swing.JFrame {
         jpContenedorEntrenador = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 51, 255));
         jPanel1.setForeground(new java.awt.Color(255, 51, 255));

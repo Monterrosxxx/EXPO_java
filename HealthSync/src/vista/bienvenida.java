@@ -7,6 +7,7 @@ public class bienvenida extends javax.swing.JFrame {
 
     public bienvenida() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public static void initBienvenida(){
@@ -25,7 +26,6 @@ public class bienvenida extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtContrasena = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtCorreoUsuario = new javax.swing.JTextField();
@@ -33,8 +33,11 @@ public class bienvenida extends javax.swing.JFrame {
         btnIniciarSesion = new javax.swing.JButton();
         btnRecuperarContrasena = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        txtContrasena = new javax.swing.JPasswordField();
+        btnVerContra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setSize(new java.awt.Dimension(1250, 750));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -53,16 +56,6 @@ public class bienvenida extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 64)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(69, 69, 69));
         jLabel3.setText("HEALTHSYNC");
-
-        txtContrasena.setBackground(new java.awt.Color(210, 203, 236));
-        txtContrasena.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
-        txtContrasena.setForeground(new java.awt.Color(69, 69, 69));
-        txtContrasena.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
-        txtContrasena.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContrasenaActionPerformed(evt);
-            }
-        });
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
@@ -117,7 +110,10 @@ public class bienvenida extends javax.swing.JFrame {
         btnRecuperarContrasena.setText("Olvidaste tu contraseña??");
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/f2a1722b-2e0a-443e-ba75-523fb1d5033c.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
+
+        txtContrasena.setBackground(new java.awt.Color(210, 203, 236));
+
+        btnVerContra.setText("Ver");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -125,22 +121,30 @@ public class bienvenida extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCorreoUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(btnRecuperarContrasena)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtContrasena)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+                            .addGap(70, 70, 70)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtCorreoUsuario, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtContrasena, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(130, 130, 130)
+                                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnRecuperarContrasena)
+                            .addComponent(btnVerContra, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(69, 69, 69)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,10 +164,12 @@ public class bienvenida extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addComponent(btnVerContra)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRecuperarContrasena)
-                        .addGap(64, 64, 64)
+                        .addGap(13, 13, 13)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -186,10 +192,6 @@ public class bienvenida extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
-
-    }//GEN-LAST:event_txtContrasenaActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
@@ -242,6 +244,7 @@ public class bienvenida extends javax.swing.JFrame {
     public javax.swing.JButton btnIniciarSesion;
     public javax.swing.JLabel btnRecuperarContrasena;
     public javax.swing.JButton btnRegistrarse;
+    public javax.swing.JButton btnVerContra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -249,7 +252,7 @@ public class bienvenida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField txtContrasena;
+    public javax.swing.JPasswordField txtContrasena;
     public javax.swing.JTextField txtCorreoUsuario;
     // End of variables declaration//GEN-END:variables
 }

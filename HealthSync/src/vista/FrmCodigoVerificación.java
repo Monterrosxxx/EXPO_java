@@ -18,6 +18,7 @@ public class FrmCodigoVerificación extends javax.swing.JFrame {
      */
     public FrmCodigoVerificación() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public static void initCodigoVerificacion(){
@@ -44,6 +45,7 @@ public class FrmCodigoVerificación extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

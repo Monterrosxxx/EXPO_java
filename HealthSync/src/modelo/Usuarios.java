@@ -82,7 +82,7 @@ public class Usuarios {
         Connection conexion = ClaseConexion.getConexion();
         
         try{
-            PreparedStatement addUsuarios = conexion.prepareStatement("INSERT INTO Usuarios (correo, clave, nombre, idRol) VALUES (?, ?, ?, 4)");
+            PreparedStatement addUsuarios = conexion.prepareStatement("INSERT INTO Usuarios (correo, clave, nombre, idRol) VALUES (?, ?, ?, 1)");
             addUsuarios.setString(1, getCorreo());
             addUsuarios.setString(2, convertirSHA256(getClave())); 
             addUsuarios.setString(3, getNombre());

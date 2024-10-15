@@ -18,6 +18,7 @@ public class Registrarse extends javax.swing.JFrame {
      */
     public Registrarse() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public static void initRegistrarse(){
@@ -48,13 +49,16 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtCorreoRegistro = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtContrasenaRegistro = new javax.swing.JTextField();
         btnAccederdelRegistro = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        txtConfirmarContrasena = new javax.swing.JTextField();
         btnSalirRegistro = new javax.swing.JLabel();
+        btnVerConfContra = new javax.swing.JButton();
+        btnVerContra = new javax.swing.JButton();
+        txtConfirmarContrasena = new javax.swing.JPasswordField();
+        txtContrasenaRegistro1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -101,11 +105,6 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(69, 69, 69));
         jLabel8.setText("Contraseña");
 
-        txtContrasenaRegistro.setBackground(new java.awt.Color(210, 203, 236));
-        txtContrasenaRegistro.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
-        txtContrasenaRegistro.setForeground(new java.awt.Color(69, 69, 69));
-        txtContrasenaRegistro.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
-
         btnAccederdelRegistro.setBackground(new java.awt.Color(46, 52, 64));
         btnAccederdelRegistro.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         btnAccederdelRegistro.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,14 +120,27 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(69, 69, 69));
         jLabel9.setText("Confirmar contraseña");
 
-        txtConfirmarContrasena.setBackground(new java.awt.Color(210, 203, 236));
-        txtConfirmarContrasena.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
-        txtConfirmarContrasena.setForeground(new java.awt.Color(69, 69, 69));
-        txtConfirmarContrasena.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(210, 203, 236), new java.awt.Color(210, 203, 236)));
-
         btnSalirRegistro.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
         btnSalirRegistro.setForeground(new java.awt.Color(69, 69, 69));
         btnSalirRegistro.setText("SALIR");
+
+        btnVerConfContra.setText("Ver");
+        btnVerConfContra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerConfContraActionPerformed(evt);
+            }
+        });
+
+        btnVerContra.setText("Ver");
+
+        txtConfirmarContrasena.setBackground(new java.awt.Color(210, 203, 236));
+
+        txtContrasenaRegistro1.setBackground(new java.awt.Color(210, 203, 236));
+        txtContrasenaRegistro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContrasenaRegistro1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -143,17 +155,18 @@ public class Registrarse extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(txtConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel8)
-                                    .addComponent(txtContrasenaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombreRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNombreRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
                                     .addComponent(jLabel7)
-                                    .addComponent(txtCorreoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCorreoRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnVerContra)
+                                    .addComponent(jLabel9)
+                                    .addComponent(txtConfirmarContrasena)
+                                    .addComponent(txtContrasenaRegistro1))
                                 .addGap(45, 45, 45)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 676, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -163,7 +176,10 @@ public class Registrarse extends javax.swing.JFrame {
                                     .addComponent(jLabel2)
                                     .addComponent(btnSalirRegistro))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(31, 31, 31))))
+                        .addGap(31, 31, 31))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnVerConfContra)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,6 +191,9 @@ public class Registrarse extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jLabel5)
@@ -191,17 +210,18 @@ public class Registrarse extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtContrasenaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addComponent(txtContrasenaRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnVerContra)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnAccederdelRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(96, Short.MAX_VALUE))
+                        .addComponent(txtConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, 6)
+                .addComponent(btnVerConfContra)
+                .addGap(41, 41, 41)
+                .addComponent(btnAccederdelRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -221,6 +241,14 @@ public class Registrarse extends javax.swing.JFrame {
     private void btnAccederdelRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederdelRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccederdelRegistroActionPerformed
+
+    private void btnVerConfContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerConfContraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerConfContraActionPerformed
+
+    private void txtContrasenaRegistro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaRegistro1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContrasenaRegistro1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,6 +288,8 @@ public class Registrarse extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAccederdelRegistro;
     public javax.swing.JLabel btnSalirRegistro;
+    public javax.swing.JButton btnVerConfContra;
+    public javax.swing.JButton btnVerContra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -270,8 +300,8 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField txtConfirmarContrasena;
-    public javax.swing.JTextField txtContrasenaRegistro;
+    public javax.swing.JPasswordField txtConfirmarContrasena;
+    public javax.swing.JPasswordField txtContrasenaRegistro1;
     public javax.swing.JTextField txtCorreoRegistro;
     public javax.swing.JTextField txtNombreRegistro;
     // End of variables declaration//GEN-END:variables

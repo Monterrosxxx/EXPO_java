@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import modelo.Usuarios;
 import static vista.FrmCorreodeRecuperacion.initCorreodeRecuperacion;
 import static vista.FrmInicio.initInicio;
@@ -26,6 +27,8 @@ public class ctrlinicioSesion implements MouseListener {
         vista.btnRegistrarse.addMouseListener(this);
         vista.btnIniciarSesion.addMouseListener(this);
         vista.btnRecuperarContrasena.addMouseListener(this);
+        vista.btnVerContra.addMouseListener(this);
+        
     }
 
     @Override
@@ -87,6 +90,22 @@ public class ctrlinicioSesion implements MouseListener {
         if(e.getSource() == vista.btnRecuperarContrasena){
             initCorreodeRecuperacion();
             vista.dispose();
+        }
+        
+        // Manejar el botón de ver contraseña
+        if(e.getSource() == vista.btnVerContra){
+            togglePasswordVisibility(vista.txtContrasena);
+        }
+    }
+    
+    // Método para alternar la visibilidad de la contraseña
+    private void togglePasswordVisibility(JPasswordField passwordField) {
+        if (passwordField.getEchoChar() == 0) {
+            // Usar punto medio como caracter de ocultación
+            passwordField.setEchoChar('\u2022'); 
+        } else {
+            // Mostrar el texto de la contraseña
+            passwordField.setEchoChar((char) 0); 
         }
     }
 
