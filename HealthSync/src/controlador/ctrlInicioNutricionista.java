@@ -9,6 +9,7 @@ import modelo.Dieta;
 import modelo.cbClientes;
 import vista.FrmInicioNutricioniosta;
 import static vista.bienvenida.initBienvenida;
+import static vista.frmClientesDieta.initClientesDieta;
 
 public class ctrlInicioNutricionista implements MouseListener, ActionListener {
     
@@ -30,6 +31,7 @@ public class ctrlInicioNutricionista implements MouseListener, ActionListener {
         this.vista.btnLimpiarDieta.addMouseListener(this);
         this.vista.jTBdietaCRUD.addMouseListener(this);
         this.vista.btnCerrarSesion.addMouseListener(this);
+        this.vista.btnVerClientesDieta.addMouseListener(this);
 
         // Cargar los nombres de los clientes en el comboBox
         this.modeloClientes.CargarComboClientes(this.vista.cbIdCliente);
@@ -41,6 +43,14 @@ public class ctrlInicioNutricionista implements MouseListener, ActionListener {
     // Método para manejar eventos de clic
     @Override
     public void mouseClicked(MouseEvent e) {
+        
+        if(e.getSource() == vista.btnVerClientesDieta){
+            
+            initClientesDieta();
+            vista.dispose();
+            
+        }
+        
         // Si el evento fue dado en el botón "Agregar Dieta"
         if (e.getSource() == vista.btnAgregarDieta) {
             agregarDieta();

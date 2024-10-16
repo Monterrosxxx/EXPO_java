@@ -45,12 +45,10 @@ public class panelConsejosE extends javax.swing.JPanel {
         txtConsejoDia = new javax.swing.JTextArea();
         cbClienteIdConsejo = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         btnAgregarConsejo = new javax.swing.JButton();
         btnEliminarConsejo = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnActualizarConsejo = new javax.swing.JButton();
-        btnVerClientes4 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTBconsejoCRUD = new javax.swing.JTable();
 
@@ -97,11 +95,6 @@ public class panelConsejosE extends javax.swing.JPanel {
         jLabel7.setText("Consejo del dia");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("IMPORTANTE: primero revisar a que cliente se le asignara la dieta aqui:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
-
         btnAgregarConsejo.setBackground(new java.awt.Color(118, 99, 242));
         btnAgregarConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
         btnAgregarConsejo.setText("Agregar");
@@ -121,11 +114,6 @@ public class panelConsejosE extends javax.swing.JPanel {
         btnActualizarConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
         btnActualizarConsejo.setText("Editar");
         add(btnActualizarConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 181, 54));
-
-        btnVerClientes4.setBackground(new java.awt.Color(118, 99, 242));
-        btnVerClientes4.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        btnVerClientes4.setText("Clientes");
-        add(btnVerClientes4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 181, 54));
 
         jTBconsejoCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -149,10 +137,8 @@ public class panelConsejosE extends javax.swing.JPanel {
     public javax.swing.JButton btnAgregarConsejo;
     public javax.swing.JButton btnEliminarConsejo;
     public javax.swing.JButton btnLimpiar;
-    public javax.swing.JButton btnVerClientes4;
     public javax.swing.JComboBox<String> cbClienteIdConsejo;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

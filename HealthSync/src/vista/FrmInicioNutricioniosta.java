@@ -66,7 +66,7 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
         btnLimpiarDieta = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTBdietaCRUD = new javax.swing.JTable();
-        btnVerClientes1 = new javax.swing.JButton();
+        btnVerClientesDieta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -192,10 +192,10 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 1420, 160));
 
-        btnVerClientes1.setBackground(new java.awt.Color(118, 99, 242));
-        btnVerClientes1.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        btnVerClientes1.setText("Clientes");
-        jPanel1.add(btnVerClientes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 181, 54));
+        btnVerClientesDieta.setBackground(new java.awt.Color(118, 99, 242));
+        btnVerClientesDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnVerClientesDieta.setText("Clientes");
+        jPanel1.add(btnVerClientesDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 181, 54));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -260,7 +260,7 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
     public javax.swing.JButton btnCerrarSesion;
     public javax.swing.JButton btnEliminarDieta;
     public javax.swing.JButton btnLimpiarDieta;
-    public javax.swing.JButton btnVerClientes1;
+    public javax.swing.JButton btnVerClientesDieta;
     public javax.swing.JComboBox<String> cbIdCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

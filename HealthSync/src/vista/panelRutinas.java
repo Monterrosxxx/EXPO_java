@@ -51,6 +51,9 @@ public class panelRutinas extends javax.swing.JPanel {
         btnLimpiarRutina = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTBrutinaCRUD = new javax.swing.JTable();
+        btnVerClientesRutina = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,8 +65,8 @@ public class panelRutinas extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ingresa unos consejos");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
+        jLabel2.setText("Ingresa una rutina");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -131,6 +134,21 @@ public class panelRutinas extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTBrutinaCRUD);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 830, 160));
+
+        btnVerClientesRutina.setBackground(new java.awt.Color(118, 99, 242));
+        btnVerClientesRutina.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnVerClientesRutina.setText("Clientes");
+        add(btnVerClientesRutina, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 181, 54));
+
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("se le asignara el consejo aqui:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("IMPORTANTE: primero revisar a que cliente ");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarRutinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarRutinaActionPerformed
@@ -143,16 +161,20 @@ public class panelRutinas extends javax.swing.JPanel {
     public javax.swing.JButton btnEditarRutina;
     public javax.swing.JButton btnEliminarRutina;
     public javax.swing.JButton btnLimpiarRutina;
+    public javax.swing.JButton btnVerClientesRutina;
     public javax.swing.JComboBox<String> cbClienteIdRutina;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable jTBrutinaCRUD;
     public javax.swing.JTextArea txtDescripcionRutina;
     public javax.swing.JTextField txtNombreRutina;
     // End of variables declaration//GEN-END:variables
+
 }

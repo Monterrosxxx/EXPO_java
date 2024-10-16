@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.Rutinas;
 import modelo.cbClientes;
+import static vista.frmClientesRutina.initClientesRutina;
 import vista.panelRutinas;
 
 // Controlador para el CRUD de rutinas
@@ -28,6 +29,7 @@ public class ctrlCRUDrutina implements MouseListener, ActionListener {
         this.vista.btnEditarRutina.addMouseListener(this);
         this.vista.cbClienteIdRutina.addActionListener(this);
         this.vista.jTBrutinaCRUD.addMouseListener(this);
+        this.vista.btnVerClientesRutina.addMouseListener(this);
         
         // Cargar los clientes en el comboBox
         this.modeloClientes.CargarComboClientes(this.vista.cbClienteIdRutina);
@@ -38,6 +40,11 @@ public class ctrlCRUDrutina implements MouseListener, ActionListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        
+        if(e.getSource() == vista.btnVerClientesRutina){
+            initClientesRutina();
+        }
+        
         // Manejar eventos de clic en los botones y la tabla
         if (e.getSource() == vista.btnAgregarRutina) {
             agregarRutina();

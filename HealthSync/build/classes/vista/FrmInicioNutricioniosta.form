@@ -419,7 +419,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnVerClientes1">
+        <Component class="javax.swing.JButton" name="btnVerClientesDieta">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f2" green="63" red="76" type="rgb"/>
