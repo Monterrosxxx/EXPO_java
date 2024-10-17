@@ -3,14 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/controlador/ctrlCodigoVerificacion.java</file>
-            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/vista/FrmCorreodeRecuperacion.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/modelo/clientesDieta.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/controlador/ctrlClientesDieta.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/modelo/Usuarios.java</file>
             <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/vista/bienvenida.java</file>
-            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/vista/FrmCodigoVerificación.java</file>
-            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/vista/FrmContrasenaNueva.java</file>
-            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/controlador/ctrlContrasenaNueva.java</file>
-            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/vista/panelRutinas.java</file>
-            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/vista/FrmInicioNutricioniosta.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/controlador/ctrlCRUDnutricionista.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/modelo/clientesRutina.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/modelo/envioCorreos.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/vista/frmClientesDieta.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/modelo/Entrenador.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/controlador/ctrlClientesRutina.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/modelo/Nutricionista.java</file>
+            <file>file:/M:/PC/Escritorio/EXPO_java/HealthSync/src/vista/panelConsejosE.java</file>
         </group>
     </open-files>
 </project-private>

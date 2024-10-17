@@ -1,14 +1,19 @@
+// Importaciones necesarias para el controlador
 package controlador;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import modelo.Usuarios;
 import static vista.FrmInicio.initInicio;
 import vista.panelUsuarios;
 
-public class ctrlCRUDusuarios implements MouseListener {
+// Clase controladora que implementa MouseListener y KeyListener
+public class ctrlCRUDusuarios implements MouseListener, KeyListener {
     
+    // Declaración de variables para la vista y el modelo
     panelUsuarios vista;
     Usuarios modelo;
     
@@ -25,6 +30,9 @@ public class ctrlCRUDusuarios implements MouseListener {
         vista.btnLimpiarUsuarios.addMouseListener(this);
         vista.btnSalirInicio.addMouseListener(this);
         vista.btnVerClave.addMouseListener(this);
+        
+        // Agregar KeyListener al campo de nombre
+        vista.txtNombreCRUD.addKeyListener(this);
         
         // Mostrar los usuarios en la tabla al iniciar
         modelo.mostrarUsuariosTB(Vista.jTBusuariosCRUD);
@@ -161,7 +169,27 @@ public class ctrlCRUDusuarios implements MouseListener {
         return correo.matches("^[\\w.-]+@[a-zA-Z]+\\.[a-zA-Z]{2,}$");
     }
 
-    // Métodos de la interfaz MouseListener que no se utilizan
+    // Implementación de los métodos KeyListener para validar la entrada de solo letras
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // Verificar si el evento proviene del campo de nombre
+        if (e.getSource() == vista.txtNombreCRUD) {
+            char c = e.getKeyChar();
+            // Permitir solo letras, espacios y la tecla de retroceso
+            if (!(Character.isLetter(c) || c == KeyEvent.VK_SPACE || c == KeyEvent.VK_BACK_SPACE)) {
+                e.consume(); // Ignorar el carácter si no es una letra
+            }
+        }
+    }
+
+    // Métodos no utilizados de KeyListener pero requeridos por la interfaz
+    @Override
+    public void keyPressed(KeyEvent e) {}
+
+    @Override
+    public void keyReleased(KeyEvent e) {}
+
+    // Métodos no utilizados de MouseListener pero requeridos por la interfaz
     @Override
     public void mousePressed(MouseEvent e) {}
 
