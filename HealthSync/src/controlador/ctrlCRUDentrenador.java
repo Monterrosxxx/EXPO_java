@@ -41,6 +41,21 @@ public class ctrlCRUDentrenador implements MouseListener {
         // Aplicar filtros a los campos de texto
         aplicarFiltroEdad(vista.txtEdadEntrenador);
         aplicarFiltroTelefono(vista.txtNumeroTelEntrenador);
+        
+        //Aplicar filtro al campo de nombre
+        aplicarFiltroNombre(vista.txtNombreEntrenador1);
+    }
+    
+    //Método para aplicar filtro al campo de nombre
+    private void aplicarFiltroNombre(JTextField textField) {
+        ((AbstractDocument) textField.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+                if (text.matches("[a-zA-Z\\s]*")) {
+                    super.replace(fb, offset, length, text, attrs);
+                }
+            }
+        });
     }
     
     // Método para aplicar filtro al campo de edad
