@@ -54,7 +54,6 @@ public class panelEntrenador extends javax.swing.JPanel {
         txtNombreEntrenador1 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTBentrenadorCRUD = new javax.swing.JTable();
-        btnSalirJPEntrenador = new javax.swing.JLabel();
 
         jTBusuariosCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,12 +76,12 @@ public class panelEntrenador extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
         jLabel3.setText("Agrega un nuevo entrenador");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(69, 69, 69));
         jLabel4.setText("Nombre");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         txtEdadEntrenador.setBackground(new java.awt.Color(210, 203, 236));
         txtEdadEntrenador.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
@@ -92,32 +91,32 @@ public class panelEntrenador extends javax.swing.JPanel {
                 txtEdadEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(txtEdadEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 330, 45));
+        jPanel1.add(txtEdadEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 330, 45));
 
         jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(69, 69, 69));
         jLabel5.setText("Edad");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(69, 69, 69));
         jLabel6.setText("Correo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         txtCorreoEntrenador.setBackground(new java.awt.Color(210, 203, 236));
         txtCorreoEntrenador.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
         txtCorreoEntrenador.setForeground(new java.awt.Color(69, 69, 69));
-        jPanel1.add(txtCorreoEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 330, 45));
+        jPanel1.add(txtCorreoEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 330, 45));
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(69, 69, 69));
         jLabel7.setText("Número");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
         txtNumeroTelEntrenador.setBackground(new java.awt.Color(210, 203, 236));
         txtNumeroTelEntrenador.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
         txtNumeroTelEntrenador.setForeground(new java.awt.Color(69, 69, 69));
-        jPanel1.add(txtNumeroTelEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 330, 45));
+        jPanel1.add(txtNumeroTelEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 330, 45));
 
         btnAgregarEntrenador.setBackground(new java.awt.Color(46, 52, 64));
         btnAgregarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
@@ -128,13 +127,13 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnAgregarEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 400, 130, 50));
+        jPanel1.add(btnAgregarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 410, 130, 50));
 
         btnEditarEntrenador.setBackground(new java.awt.Color(46, 52, 64));
         btnEditarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnEditarEntrenador.setForeground(new java.awt.Color(255, 255, 255));
         btnEditarEntrenador.setText("Editar");
-        jPanel1.add(btnEditarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 470, 130, 50));
+        jPanel1.add(btnEditarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 480, 130, 50));
 
         btnLimpiarCRUDentrenador.setBackground(new java.awt.Color(46, 52, 64));
         btnLimpiarCRUDentrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
@@ -146,7 +145,7 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnLimpiarCRUDentrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiarCRUDentrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 610, 130, 50));
+        jPanel1.add(btnLimpiarCRUDentrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 620, 130, 50));
 
         btnEliminarEntrenador.setBackground(new java.awt.Color(46, 52, 64));
         btnEliminarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
@@ -158,12 +157,12 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnEliminarEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 540, 130, 50));
+        jPanel1.add(btnEliminarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 550, 130, 50));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(69, 69, 69));
         jLabel8.setText("Especialidad");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, 20));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, -1, 20));
 
         cbEspecialidad.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         cbEspecialidad.setForeground(new java.awt.Color(69, 69, 69));
@@ -173,17 +172,17 @@ public class panelEntrenador extends javax.swing.JPanel {
                 cbEspecialidadActionPerformed(evt);
             }
         });
-        jPanel1.add(cbEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 330, 45));
+        jPanel1.add(cbEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 330, 45));
 
         jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(69, 69, 69));
         jLabel9.setText("Contraseña");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
 
         txtClave.setBackground(new java.awt.Color(210, 203, 236));
         txtClave.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
         txtClave.setForeground(new java.awt.Color(69, 69, 69));
-        jPanel1.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 330, 45));
+        jPanel1.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 330, 45));
 
         txtNombreEntrenador1.setBackground(new java.awt.Color(210, 203, 236));
         txtNombreEntrenador1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
@@ -193,7 +192,7 @@ public class panelEntrenador extends javax.swing.JPanel {
                 txtNombreEntrenador1ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombreEntrenador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 330, 45));
+        jPanel1.add(txtNombreEntrenador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 330, 45));
 
         jTBentrenadorCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -208,11 +207,7 @@ public class panelEntrenador extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTBentrenadorCRUD);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 960, 260));
-
-        btnSalirJPEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
-        btnSalirJPEntrenador.setText("Salir");
-        jPanel1.add(btnSalirJPEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 740, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -258,7 +253,6 @@ public class panelEntrenador extends javax.swing.JPanel {
     public javax.swing.JButton btnEditarEntrenador;
     public javax.swing.JButton btnEliminarEntrenador;
     public javax.swing.JButton btnLimpiarCRUDentrenador;
-    public javax.swing.JLabel btnSalirJPEntrenador;
     public javax.swing.JComboBox<String> cbEspecialidad;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

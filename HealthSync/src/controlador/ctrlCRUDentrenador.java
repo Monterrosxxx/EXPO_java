@@ -29,7 +29,6 @@ public class ctrlCRUDentrenador implements MouseListener {
         vista.btnEditarEntrenador.addMouseListener(this);
         vista.btnEliminarEntrenador.addMouseListener(this);
         vista.btnLimpiarCRUDentrenador.addMouseListener(this);
-        vista.btnSalirJPEntrenador.addMouseListener(this);
         vista.jTBentrenadorCRUD.addMouseListener(this);
         vista.cbEspecialidad.addActionListener(e -> obtenerIdEspecialidad());
         

@@ -27,10 +27,7 @@ public class ctrlCRUDusuarios implements MouseListener, KeyListener {
         vista.btnAgregarUsuario.addMouseListener(this);
         vista.btnEditarUsuario1.addMouseListener(this);
         vista.btnEliminarUsuario.addMouseListener(this);
-        vista.btnLimpiarUsuarios.addMouseListener(this);
-        vista.btnSalirUsuarios.addMouseListener(this);
-        vista.btnVerClave.addMouseListener(this);
-        
+        vista.btnLimpiarUsuarios.addMouseListener(this);        
         // Agregar KeyListener al campo de nombre
         vista.txtNombreCRUD.addKeyListener(this);
         
@@ -41,11 +38,7 @@ public class ctrlCRUDusuarios implements MouseListener, KeyListener {
     // Método para manejar eventos de clic
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (e.getSource() == vista.btnSalirUsuarios) {
-            initInicio();
-            vista.dispose();
-            return;
-        }
+
 
         if (e.getSource() == vista.jTBusuariosCRUD) {
             modelo.cargarDatosTabla(vista);
