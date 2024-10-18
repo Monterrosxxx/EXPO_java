@@ -41,8 +41,6 @@ public class panelNutricionista extends javax.swing.JPanel {
         txtNumeroNutri = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         txtNombreNutri = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtEdadNutri = new javax.swing.JTextField();
@@ -52,99 +50,103 @@ public class panelNutricionista extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTBnutricionistaCRUD = new javax.swing.JTable();
         btnActualizar = new javax.swing.JButton();
+        btnSalirJPEntrenador = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1267, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAgregar.setBackground(new java.awt.Color(118, 99, 242));
-        btnAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnAgregar.setBackground(new java.awt.Color(46, 52, 64));
+        btnAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
             }
         });
-        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 620, 159, 54));
+        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 410, 130, 50));
 
-        btnEliminar.setBackground(new java.awt.Color(118, 99, 242));
-        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnEliminar.setBackground(new java.awt.Color(46, 52, 64));
+        btnEliminar.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
-        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, 158, 54));
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 480, 130, 50));
 
-        btnLimpiar.setBackground(new java.awt.Color(118, 99, 242));
-        btnLimpiar.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnLimpiar.setBackground(new java.awt.Color(46, 52, 64));
+        btnLimpiar.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiar.setText("Limpiar");
-        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 620, 160, 54));
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 620, 130, 50));
 
-        txtClaveNutri.setBackground(new java.awt.Color(221, 221, 221));
+        txtClaveNutri.setBackground(new java.awt.Color(210, 203, 236));
+        txtClaveNutri.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtClaveNutri.setForeground(new java.awt.Color(69, 69, 69));
         txtClaveNutri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtClaveNutriActionPerformed(evt);
             }
         });
-        add(txtClaveNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 350, 44));
+        add(txtClaveNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 350, 45));
 
-        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(69, 69, 69));
         jLabel4.setText("Contraseña");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, -1, -1));
 
-        txtNumeroNutri.setBackground(new java.awt.Color(221, 221, 221));
-        add(txtNumeroNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 350, 43));
+        txtNumeroNutri.setBackground(new java.awt.Color(210, 203, 236));
+        txtNumeroNutri.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtNumeroNutri.setForeground(new java.awt.Color(69, 69, 69));
+        add(txtNumeroNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 350, 45));
 
-        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(69, 69, 69));
         jLabel3.setText("Numero");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ingresar nuevo nutricionista");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
+        jLabel2.setText("Agrega un nuevo nutricionista");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Bienvenido a HEALTHSYNC");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
+        txtNombreNutri.setBackground(new java.awt.Color(210, 203, 236));
+        txtNombreNutri.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtNombreNutri.setForeground(new java.awt.Color(69, 69, 69));
+        add(txtNombreNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 350, 45));
 
-        jButton1.setBackground(new java.awt.Color(118, 99, 242));
-        jButton1.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        jButton1.setText("Salir");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 18, 138, -1));
-
-        txtNombreNutri.setBackground(new java.awt.Color(221, 221, 221));
-        add(txtNombreNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 350, 43));
-
-        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(69, 69, 69));
         jLabel5.setText("Nombre");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
-        txtEdadNutri.setBackground(new java.awt.Color(221, 221, 221));
+        txtEdadNutri.setBackground(new java.awt.Color(210, 203, 236));
+        txtEdadNutri.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtEdadNutri.setForeground(new java.awt.Color(69, 69, 69));
         txtEdadNutri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEdadNutriActionPerformed(evt);
             }
         });
-        add(txtEdadNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 350, 44));
+        add(txtEdadNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 350, 45));
 
-        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(69, 69, 69));
         jLabel6.setText("Edad");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
-        txtCorreoNutri.setBackground(new java.awt.Color(221, 221, 221));
+        txtCorreoNutri.setBackground(new java.awt.Color(210, 203, 236));
+        txtCorreoNutri.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtCorreoNutri.setForeground(new java.awt.Color(69, 69, 69));
         txtCorreoNutri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoNutriActionPerformed(evt);
             }
         });
-        add(txtCorreoNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 350, 44));
+        add(txtCorreoNutri, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 350, 45));
 
-        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(69, 69, 69));
         jLabel7.setText("Correo electronico");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, -1, -1));
 
         jTBnutricionistaCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -159,12 +161,17 @@ public class panelNutricionista extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTBnutricionistaCRUD);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 850, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 900, 260));
 
-        btnActualizar.setBackground(new java.awt.Color(118, 99, 242));
-        btnActualizar.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnActualizar.setBackground(new java.awt.Color(46, 52, 64));
+        btnActualizar.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
         btnActualizar.setText("Editar");
-        add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 620, 160, 54));
+        add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 550, 130, 50));
+
+        btnSalirJPEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnSalirJPEntrenador.setText("Salir");
+        add(btnSalirJPEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtClaveNutriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClaveNutriActionPerformed
@@ -189,8 +196,7 @@ public class panelNutricionista extends javax.swing.JPanel {
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel btnSalirJPEntrenador;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

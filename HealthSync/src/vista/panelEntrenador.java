@@ -35,10 +35,7 @@ public class panelEntrenador extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTBusuariosCRUD = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnSalirJPEntrenador = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtEdadEntrenador = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -57,6 +54,7 @@ public class panelEntrenador extends javax.swing.JPanel {
         txtNombreEntrenador1 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTBentrenadorCRUD = new javax.swing.JTable();
+        btnSalirJPEntrenador = new javax.swing.JLabel();
 
         jTBusuariosCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,85 +72,73 @@ public class panelEntrenador extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1267, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 40)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Bienvenido a HealthSync");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel3.setText("Agrega un nuevo entrenador");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("¡Hola administrador!");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Estas en el apartado agregar entrenador");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
-
-        btnSalirJPEntrenador.setBackground(new java.awt.Color(118, 99, 242));
-        btnSalirJPEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        btnSalirJPEntrenador.setText("Salir");
-        btnSalirJPEntrenador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirJPEntrenadorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnSalirJPEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 179, 52));
-
-        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(69, 69, 69));
         jLabel4.setText("Nombre");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
-        txtEdadEntrenador.setBackground(new java.awt.Color(221, 221, 221));
+        txtEdadEntrenador.setBackground(new java.awt.Color(210, 203, 236));
+        txtEdadEntrenador.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtEdadEntrenador.setForeground(new java.awt.Color(69, 69, 69));
         txtEdadEntrenador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEdadEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(txtEdadEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 380, 51));
+        jPanel1.add(txtEdadEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 330, 45));
 
-        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(69, 69, 69));
         jLabel5.setText("Edad");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(69, 69, 69));
         jLabel6.setText("Correo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
 
-        txtCorreoEntrenador.setBackground(new java.awt.Color(221, 221, 221));
-        jPanel1.add(txtCorreoEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 380, 56));
+        txtCorreoEntrenador.setBackground(new java.awt.Color(210, 203, 236));
+        txtCorreoEntrenador.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtCorreoEntrenador.setForeground(new java.awt.Color(69, 69, 69));
+        jPanel1.add(txtCorreoEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 330, 45));
 
-        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(69, 69, 69));
         jLabel7.setText("Número");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
 
-        txtNumeroTelEntrenador.setBackground(new java.awt.Color(221, 221, 221));
-        jPanel1.add(txtNumeroTelEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 380, 58));
+        txtNumeroTelEntrenador.setBackground(new java.awt.Color(210, 203, 236));
+        txtNumeroTelEntrenador.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtNumeroTelEntrenador.setForeground(new java.awt.Color(69, 69, 69));
+        jPanel1.add(txtNumeroTelEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 330, 45));
 
-        btnAgregarEntrenador.setBackground(new java.awt.Color(118, 99, 242));
-        btnAgregarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnAgregarEntrenador.setBackground(new java.awt.Color(46, 52, 64));
+        btnAgregarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnAgregarEntrenador.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarEntrenador.setText("Agregar");
         btnAgregarEntrenador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 179, 52));
+        jPanel1.add(btnAgregarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 400, 130, 50));
 
-        btnEditarEntrenador.setBackground(new java.awt.Color(118, 99, 242));
-        btnEditarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnEditarEntrenador.setBackground(new java.awt.Color(46, 52, 64));
+        btnEditarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnEditarEntrenador.setForeground(new java.awt.Color(255, 255, 255));
         btnEditarEntrenador.setText("Editar");
-        jPanel1.add(btnEditarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 179, 52));
+        jPanel1.add(btnEditarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 470, 130, 50));
 
-        btnLimpiarCRUDentrenador.setBackground(new java.awt.Color(118, 99, 242));
-        btnLimpiarCRUDentrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnLimpiarCRUDentrenador.setBackground(new java.awt.Color(46, 52, 64));
+        btnLimpiarCRUDentrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnLimpiarCRUDentrenador.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiarCRUDentrenador.setText("Limpiar");
         btnLimpiarCRUDentrenador.setActionCommand("");
         btnLimpiarCRUDentrenador.addActionListener(new java.awt.event.ActionListener() {
@@ -160,10 +146,11 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnLimpiarCRUDentrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiarCRUDentrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 370, 179, 52));
+        jPanel1.add(btnLimpiarCRUDentrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 610, 130, 50));
 
-        btnEliminarEntrenador.setBackground(new java.awt.Color(118, 99, 242));
-        btnEliminarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnEliminarEntrenador.setBackground(new java.awt.Color(46, 52, 64));
+        btnEliminarEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnEliminarEntrenador.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarEntrenador.setText("Eliminar");
         btnEliminarEntrenador.setActionCommand("");
         btnEliminarEntrenador.addActionListener(new java.awt.event.ActionListener() {
@@ -171,36 +158,42 @@ public class panelEntrenador extends javax.swing.JPanel {
                 btnEliminarEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 179, 52));
+        jPanel1.add(btnEliminarEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 540, 130, 50));
 
-        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(69, 69, 69));
         jLabel8.setText("Especialidad");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, 20));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, 20));
 
+        cbEspecialidad.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        cbEspecialidad.setForeground(new java.awt.Color(69, 69, 69));
         cbEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbEspecialidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEspecialidadActionPerformed(evt);
             }
         });
-        jPanel1.add(cbEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 240, 60));
+        jPanel1.add(cbEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 330, 45));
 
-        jLabel9.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(69, 69, 69));
         jLabel9.setText("Contraseña");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, -1));
 
-        txtClave.setBackground(new java.awt.Color(221, 221, 221));
-        jPanel1.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 240, 56));
+        txtClave.setBackground(new java.awt.Color(210, 203, 236));
+        txtClave.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtClave.setForeground(new java.awt.Color(69, 69, 69));
+        jPanel1.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 330, 45));
 
-        txtNombreEntrenador1.setBackground(new java.awt.Color(221, 221, 221));
+        txtNombreEntrenador1.setBackground(new java.awt.Color(210, 203, 236));
+        txtNombreEntrenador1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtNombreEntrenador1.setForeground(new java.awt.Color(69, 69, 69));
         txtNombreEntrenador1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreEntrenador1ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombreEntrenador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 380, 51));
+        jPanel1.add(txtNombreEntrenador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 330, 45));
 
         jTBentrenadorCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -215,22 +208,22 @@ public class panelEntrenador extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTBentrenadorCRUD);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 960, 260));
+
+        btnSalirJPEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnSalirJPEntrenador.setText("Salir");
+        jPanel1.add(btnSalirJPEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -238,10 +231,6 @@ public class panelEntrenador extends javax.swing.JPanel {
     private void txtEdadEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdadEntrenadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEdadEntrenadorActionPerformed
-
-    private void btnSalirJPEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirJPEntrenadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalirJPEntrenadorActionPerformed
 
     private void btnLimpiarCRUDentrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCRUDentrenadorActionPerformed
         // TODO add your handling code here:
@@ -269,10 +258,8 @@ public class panelEntrenador extends javax.swing.JPanel {
     public javax.swing.JButton btnEditarEntrenador;
     public javax.swing.JButton btnEliminarEntrenador;
     public javax.swing.JButton btnLimpiarCRUDentrenador;
-    public javax.swing.JButton btnSalirJPEntrenador;
+    public javax.swing.JLabel btnSalirJPEntrenador;
     public javax.swing.JComboBox<String> cbEspecialidad;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

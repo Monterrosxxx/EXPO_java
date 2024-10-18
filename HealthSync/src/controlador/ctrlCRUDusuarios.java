@@ -28,7 +28,7 @@ public class ctrlCRUDusuarios implements MouseListener, KeyListener {
         vista.btnEditarUsuario1.addMouseListener(this);
         vista.btnEliminarUsuario.addMouseListener(this);
         vista.btnLimpiarUsuarios.addMouseListener(this);
-        vista.btnSalirInicio.addMouseListener(this);
+        vista.btnSalirUsuarios.addMouseListener(this);
         vista.btnVerClave.addMouseListener(this);
         
         // Agregar KeyListener al campo de nombre
@@ -41,7 +41,7 @@ public class ctrlCRUDusuarios implements MouseListener, KeyListener {
     // Método para manejar eventos de clic
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (e.getSource() == vista.btnSalirInicio) {
+        if (e.getSource() == vista.btnSalirUsuarios) {
             initInicio();
             vista.dispose();
             return;

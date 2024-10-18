@@ -40,22 +40,19 @@ public class frmClientesDieta extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTBclientesDieta = new javax.swing.JTable();
-        btnSalirCD = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        btnSalirCD = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(214, 166, 246));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Clientes y sus Dietas");
-
-        jTBclientesDieta.setBackground(new java.awt.Color(204, 204, 255));
+        jTBclientesDieta.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        jTBclientesDieta.setForeground(new java.awt.Color(69, 69, 69));
         jTBclientesDieta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -69,42 +66,41 @@ public class frmClientesDieta extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTBclientesDieta);
 
-        btnSalirCD.setBackground(new java.awt.Color(210, 203, 236));
-        btnSalirCD.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        btnSalirCD.setForeground(new java.awt.Color(69, 69, 69));
+        jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(69, 69, 69));
+        jLabel9.setText("Clientes/Dietas");
+
+        btnSalirCD.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnSalirCD.setText("Salir");
-        btnSalirCD.setBorder(null);
-        btnSalirCD.setBorderPainted(false);
-        btnSalirCD.setDefaultCapable(false);
-        btnSalirCD.setFocusPainted(false);
-        btnSalirCD.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(btnSalirCD)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(186, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSalirCD, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(181, 181, 181))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(495, 495, 495))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(btnSalirCD, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
+                .addGap(28, 28, 28)
+                .addComponent(btnSalirCD)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel9)
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,8 +153,8 @@ public class frmClientesDieta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnSalirCD;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel btnSalirCD;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTBclientesDieta;

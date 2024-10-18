@@ -36,7 +36,6 @@ public class panelConsejosE extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -53,68 +52,75 @@ public class panelConsejosE extends javax.swing.JPanel {
         jTBconsejoCRUD = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1267, 720));
+        setPreferredSize(new java.awt.Dimension(1267, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ingresa unos consejos");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 40)); // NOI18N
+        jLabel2.setText("Agrega nuevos consejos");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Bienvenido a HEALTHSYNC");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(69, 69, 69));
         jLabel5.setText("Consejo para entrenar");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(69, 69, 69));
         jLabel6.setText("Selecciona el cliente al que le agregaras los consejos");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
         txtConsejoEntrenar.setColumns(20);
+        txtConsejoEntrenar.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        txtConsejoEntrenar.setForeground(new java.awt.Color(69, 69, 69));
         txtConsejoEntrenar.setRows(5);
         jScrollPane1.setViewportView(txtConsejoEntrenar);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, 110));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 410, 140));
 
         txtConsejoDia.setColumns(20);
+        txtConsejoDia.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        txtConsejoDia.setForeground(new java.awt.Color(69, 69, 69));
         txtConsejoDia.setRows(5);
         jScrollPane2.setViewportView(txtConsejoDia);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 110));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 410, 140));
 
+        cbClienteIdConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        cbClienteIdConsejo.setForeground(new java.awt.Color(69, 69, 69));
         cbClienteIdConsejo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(cbClienteIdConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 300, 50));
+        add(cbClienteIdConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 300, 50));
 
-        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(69, 69, 69));
         jLabel7.setText("Consejo del dia");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
-        btnAgregarConsejo.setBackground(new java.awt.Color(118, 99, 242));
-        btnAgregarConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnAgregarConsejo.setBackground(new java.awt.Color(46, 52, 64));
+        btnAgregarConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnAgregarConsejo.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarConsejo.setText("Agregar");
-        add(btnAgregarConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 181, 54));
+        add(btnAgregarConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 430, 130, 40));
 
-        btnEliminarConsejo.setBackground(new java.awt.Color(118, 99, 242));
-        btnEliminarConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnEliminarConsejo.setBackground(new java.awt.Color(46, 52, 64));
+        btnEliminarConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnEliminarConsejo.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarConsejo.setText("Eliminar");
-        add(btnEliminarConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 181, 54));
+        add(btnEliminarConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 490, 130, 40));
 
-        btnLimpiar.setBackground(new java.awt.Color(118, 99, 242));
-        btnLimpiar.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnLimpiar.setBackground(new java.awt.Color(46, 52, 64));
+        btnLimpiar.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiar.setText("Limpiar");
-        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 340, 181, 54));
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 610, 130, 40));
 
-        btnActualizarConsejo.setBackground(new java.awt.Color(118, 99, 242));
-        btnActualizarConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnActualizarConsejo.setBackground(new java.awt.Color(46, 52, 64));
+        btnActualizarConsejo.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnActualizarConsejo.setForeground(new java.awt.Color(255, 255, 255));
         btnActualizarConsejo.setText("Editar");
-        add(btnActualizarConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 181, 54));
+        add(btnActualizarConsejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 550, 130, 40));
 
+        jTBconsejoCRUD.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
         jTBconsejoCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -128,7 +134,7 @@ public class panelConsejosE extends javax.swing.JPanel {
         ));
         jScrollPane5.setViewportView(jTBconsejoCRUD);
 
-        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 850, 180));
+        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 880, 220));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -139,7 +145,6 @@ public class panelConsejosE extends javax.swing.JPanel {
     public javax.swing.JButton btnLimpiar;
     public javax.swing.JComboBox<String> cbClienteIdConsejo;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
