@@ -39,7 +39,6 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnRegresarBienvenida = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtContrasenaNueva = new javax.swing.JTextField();
         btnConfirmarContrairLogin = new javax.swing.JButton();
@@ -47,26 +46,12 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnRegresarBienvenida = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        btnRegresarBienvenida.setBackground(new java.awt.Color(210, 203, 236));
-        btnRegresarBienvenida.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        btnRegresarBienvenida.setForeground(new java.awt.Color(69, 69, 69));
-        btnRegresarBienvenida.setText("Salir");
-        btnRegresarBienvenida.setBorder(null);
-        btnRegresarBienvenida.setBorderPainted(false);
-        btnRegresarBienvenida.setDefaultCapable(false);
-        btnRegresarBienvenida.setFocusPainted(false);
-        btnRegresarBienvenida.setFocusable(false);
-        btnRegresarBienvenida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarBienvenidaActionPerformed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(69, 69, 69));
@@ -89,26 +74,26 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(46, 52, 64));
         jLabel5.setText("Trata de recordar esta contraseña");
 
+        btnRegresarBienvenida.setBackground(new java.awt.Color(69, 69, 69));
+        btnRegresarBienvenida.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnRegresarBienvenida.setText("Salir");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel3)
-                .addGap(226, 226, 226))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnRegresarBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(733, 733, 733)
+                        .addGap(936, 936, 936)
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
+                        .addGap(371, 371, 371)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel4)
+                                .addGap(41, 41, 41))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(95, 95, 95)
                                 .addComponent(jLabel5))
@@ -117,25 +102,28 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(149, 149, 149)
-                                .addComponent(btnConfirmarContrairLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnConfirmarContrairLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(206, 206, 206)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(btnRegresarBienvenida)))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel2)
-                        .addGap(308, 308, 308)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnRegresarBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGap(26, 26, 26)
+                .addComponent(jLabel2)
+                .addGap(308, 308, 308)
+                .addComponent(jLabel3)
+                .addContainerGap(387, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(btnRegresarBienvenida)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
@@ -143,7 +131,7 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
                 .addComponent(txtContrasenaNueva, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnConfirmarContrairLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,10 +147,6 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRegresarBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarBienvenidaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegresarBienvenidaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,7 +186,7 @@ public class FrmContrasenaNueva extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnConfirmarContrairLogin;
-    public javax.swing.JButton btnRegresarBienvenida;
+    public javax.swing.JLabel btnRegresarBienvenida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -42,44 +42,70 @@ public class FrmInicioEntrenador extends javax.swing.JFrame {
         btnAggConsejos = new javax.swing.JButton();
         btnAggRutina = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jpContenedorEntrenador = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(210, 203, 236));
         jPanel1.setForeground(new java.awt.Color(255, 51, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAggConsejos.setBackground(new java.awt.Color(255, 153, 255));
-        btnAggConsejos.setForeground(new java.awt.Color(0, 0, 0));
+        btnAggConsejos.setBackground(new java.awt.Color(210, 203, 236));
+        btnAggConsejos.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnAggConsejos.setForeground(new java.awt.Color(69, 69, 69));
         btnAggConsejos.setText("Consejos");
+        btnAggConsejos.setBorder(null);
         btnAggConsejos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAggConsejosActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAggConsejos, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 165, 138, 41));
+        jPanel1.add(btnAggConsejos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 138, 41));
 
-        btnAggRutina.setBackground(new java.awt.Color(255, 153, 255));
-        btnAggRutina.setForeground(new java.awt.Color(0, 0, 0));
+        btnAggRutina.setBackground(new java.awt.Color(210, 203, 236));
+        btnAggRutina.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnAggRutina.setForeground(new java.awt.Color(69, 69, 69));
         btnAggRutina.setText("Rutinas");
+        btnAggRutina.setBorder(null);
         btnAggRutina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAggRutinaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAggRutina, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 281, 138, 41));
+        jPanel1.add(btnAggRutina, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 138, 41));
 
-        btnCerrarSesion.setBackground(new java.awt.Color(255, 153, 255));
-        btnCerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        btnCerrarSesion.setBackground(new java.awt.Color(210, 203, 236));
+        btnCerrarSesion.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(69, 69, 69));
         btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.setBorder(null);
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 138, 41));
+        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 680, 138, 41));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cardio (3).png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 40)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("HEALTHSYNC");
+        jLabel3.setToolTipText("");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/entrenamiento (1).png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/consejo.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
 
         jpContenedorEntrenador.setBackground(new java.awt.Color(255, 255, 255));
         jpContenedorEntrenador.setPreferredSize(new java.awt.Dimension(894, 0));
@@ -92,12 +118,12 @@ public class FrmInicioEntrenador extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jpContenedorEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jpContenedorEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpContenedorEntrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -154,6 +180,10 @@ public class FrmInicioEntrenador extends javax.swing.JFrame {
     public javax.swing.JButton btnAggConsejos;
     public javax.swing.JButton btnAggRutina;
     public javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jpContenedorEntrenador;
     // End of variables declaration//GEN-END:variables

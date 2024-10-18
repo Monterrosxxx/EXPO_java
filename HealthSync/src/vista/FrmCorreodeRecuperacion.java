@@ -26,92 +26,117 @@ public class FrmCorreodeRecuperacion extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         btnContinuarCodVeri = new javax.swing.JButton();
         txtCorreoRecuperacion = new javax.swing.JTextField();
-        btnRegresar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Ingrese su correo");
-
-        btnContinuarCodVeri.setBackground(new java.awt.Color(118, 99, 242));
-        btnContinuarCodVeri.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnContinuarCodVeri.setBackground(new java.awt.Color(46, 52, 64));
+        btnContinuarCodVeri.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        btnContinuarCodVeri.setForeground(new java.awt.Color(255, 255, 255));
         btnContinuarCodVeri.setText("Continuar");
-
-        txtCorreoRecuperacion.setBackground(new java.awt.Color(221, 221, 221));
-
-        btnRegresar.setBackground(new java.awt.Color(210, 203, 236));
-        btnRegresar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        btnRegresar.setForeground(new java.awt.Color(69, 69, 69));
-        btnRegresar.setText("Regresar");
-        btnRegresar.setBorder(null);
-        btnRegresar.setBorderPainted(false);
-        btnRegresar.setDefaultCapable(false);
-        btnRegresar.setFocusPainted(false);
-        btnRegresar.setFocusable(false);
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+        btnContinuarCodVeri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
+                btnContinuarCodVeriActionPerformed(evt);
             }
         });
+
+        txtCorreoRecuperacion.setBackground(new java.awt.Color(210, 203, 236));
+        txtCorreoRecuperacion.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtCorreoRecuperacion.setForeground(new java.awt.Color(69, 69, 69));
+        txtCorreoRecuperacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCorreoRecuperacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreoRecuperacionActionPerformed(evt);
+            }
+        });
+
+        btnRegresar.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnRegresar.setText("Salir");
+
+        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(69, 69, 69));
+        jLabel1.setText("Ingrese su nueva contraseña");
+
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(46, 52, 64));
+        jLabel5.setText("Trata de recordar esta contraseña");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/86ca71c9-b9a8-4073-bde6-220054d2efbf.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(btnRegresar)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(391, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(277, 277, 277)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(363, 363, 363)
-                        .addComponent(btnContinuarCodVeri))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(153, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(jLabel5))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(174, 174, 174)
+                                .addComponent(btnContinuarCodVeri, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGap(399, 399, 399))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(431, 431, 431))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addGap(32, 32, 32)
+                .addComponent(btnRegresar)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(btnContinuarCodVeri)
-                .addGap(236, 236, 236))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtCorreoRecuperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(btnContinuarCodVeri, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+    private void btnContinuarCodVeriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarCodVeriActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegresarActionPerformed
+    }//GEN-LAST:event_btnContinuarCodVeriActionPerformed
+
+    private void txtCorreoRecuperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoRecuperacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoRecuperacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,8 +176,10 @@ public class FrmCorreodeRecuperacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnContinuarCodVeri;
-    public javax.swing.JButton btnRegresar;
+    public javax.swing.JLabel btnRegresar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txtCorreoRecuperacion;
     // End of variables declaration//GEN-END:variables

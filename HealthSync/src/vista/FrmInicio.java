@@ -41,50 +41,92 @@ public class FrmInicio extends javax.swing.JFrame {
         btnEntrenador = new javax.swing.JButton();
         btnNutricionista = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jpContenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1267, 720));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(210, 203, 236));
         jPanel1.setForeground(new java.awt.Color(255, 51, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnUsuarios.setBackground(new java.awt.Color(255, 153, 255));
+        btnUsuarios.setBackground(new java.awt.Color(210, 203, 236));
+        btnUsuarios.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        btnUsuarios.setForeground(new java.awt.Color(69, 69, 69));
         btnUsuarios.setText("Usuarios");
+        btnUsuarios.setBorder(null);
+        btnUsuarios.setFocusCycleRoot(true);
+        btnUsuarios.setFocusPainted(false);
+        btnUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuariosActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 165, 138, 41));
+        jPanel1.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 138, 41));
 
-        btnEntrenador.setBackground(new java.awt.Color(255, 153, 255));
+        btnEntrenador.setBackground(new java.awt.Color(210, 203, 236));
+        btnEntrenador.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        btnEntrenador.setForeground(new java.awt.Color(69, 69, 69));
         btnEntrenador.setText("Entrenador");
+        btnEntrenador.setBorder(null);
+        btnEntrenador.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEntrenador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntrenadorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 281, 138, 41));
+        jPanel1.add(btnEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 138, 41));
 
-        btnNutricionista.setBackground(new java.awt.Color(255, 153, 255));
+        btnNutricionista.setBackground(new java.awt.Color(210, 203, 236));
+        btnNutricionista.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        btnNutricionista.setForeground(new java.awt.Color(69, 69, 69));
         btnNutricionista.setText("Nutricionista");
+        btnNutricionista.setBorder(null);
+        btnNutricionista.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnNutricionista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNutricionistaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnNutricionista, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 400, 138, 41));
+        jPanel1.add(btnNutricionista, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 138, 41));
 
-        btnCerrarSesion.setBackground(new java.awt.Color(255, 153, 255));
+        btnCerrarSesion.setBackground(new java.awt.Color(210, 203, 236));
+        btnCerrarSesion.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(69, 69, 69));
         btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.setBorder(null);
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, 138, 41));
+        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 138, 41));
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 44)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("HEALTHSYNC");
+        jLabel3.setToolTipText("");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 290, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cardio (3).png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plan-de-nutricion.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar-usuario (1).png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 40));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/entrenamiento (1).png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 30, 40));
 
         jpContenedor.setBackground(new java.awt.Color(255, 255, 255));
         jpContenedor.setPreferredSize(new java.awt.Dimension(894, 0));
@@ -97,11 +139,11 @@ public class FrmInicio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 683, Short.MAX_VALUE)
+            .addComponent(jpContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -165,6 +207,11 @@ public class FrmInicio extends javax.swing.JFrame {
     public javax.swing.JButton btnEntrenador;
     public javax.swing.JButton btnNutricionista;
     public javax.swing.JButton btnUsuarios;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jpContenedor;
     // End of variables declaration//GEN-END:variables

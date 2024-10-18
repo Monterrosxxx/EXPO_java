@@ -43,7 +43,6 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -59,7 +58,6 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
         cbIdCliente = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        btnCerrarSesion = new javax.swing.JButton();
         btnAgregarDieta = new javax.swing.JButton();
         btnActualizarDieta = new javax.swing.JButton();
         btnEliminarDieta = new javax.swing.JButton();
@@ -67,116 +65,118 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTBdietaCRUD = new javax.swing.JTable();
         btnVerClientesDieta = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        btnCerrarSesion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1267, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("IMPORTANTE: primero revisar a que cliente se le asignara la dieta aqui:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 481, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(69, 69, 69));
+        jLabel2.setText("asignara la dieta aqui:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Bienvenido a HEALTHSYNC");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(381, 17, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(69, 69, 69));
         jLabel3.setText("Desayuno");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(69, 69, 69));
         jLabel4.setText("Almuerzo");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 114, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, -1, -1));
 
         txtAlmuerzo.setColumns(20);
         txtAlmuerzo.setRows(5);
         jScrollPane1.setViewportView(txtAlmuerzo);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 151, 397, 210));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 380, 100));
 
         txtDesayuno.setColumns(20);
         txtDesayuno.setRows(5);
         jScrollPane2.setViewportView(txtDesayuno);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 155, 397, 210));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 380, 100));
 
-        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(69, 69, 69));
         jLabel5.setText("Cena");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(823, 114, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 40, -1));
 
         txtCena.setColumns(20);
         txtCena.setRows(5);
         jScrollPane3.setViewportView(txtCena);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(823, 151, 397, 210));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 150, 380, 100));
 
         txtRefrigerios.setColumns(20);
         txtRefrigerios.setRows(5);
         jScrollPane4.setViewportView(txtRefrigerios);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 410, 397, 210));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 380, 100));
 
-        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(69, 69, 69));
         jLabel6.setText("Refrigerios");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 370, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, 30));
 
+        cbIdCliente.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        cbIdCliente.setForeground(new java.awt.Color(69, 69, 69));
         cbIdCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cbIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 301, 52));
+        jPanel1.add(cbIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 301, 40));
 
-        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(69, 69, 69));
         jLabel7.setText("Cliente al que se le asignara la dieta");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 379, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, 30));
 
-        jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Agrega una dieta");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
+        jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 40)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(69, 69, 69));
+        jLabel9.setText("Agrega una nueva dieta");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
 
-        btnCerrarSesion.setBackground(new java.awt.Color(118, 99, 242));
-        btnCerrarSesion.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        btnCerrarSesion.setText("Cerrar Sesión");
-        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarSesionActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 54));
-
-        btnAgregarDieta.setBackground(new java.awt.Color(118, 99, 242));
-        btnAgregarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnAgregarDieta.setBackground(new java.awt.Color(69, 69, 69));
+        btnAgregarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnAgregarDieta.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarDieta.setText("Agregar");
-        jPanel1.add(btnAgregarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 120, 181, 54));
+        btnAgregarDieta.setBorder(null);
+        jPanel1.add(btnAgregarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 410, 130, 40));
 
-        btnActualizarDieta.setBackground(new java.awt.Color(118, 99, 242));
-        btnActualizarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnActualizarDieta.setBackground(new java.awt.Color(69, 69, 69));
+        btnActualizarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnActualizarDieta.setForeground(new java.awt.Color(255, 255, 255));
         btnActualizarDieta.setText("Editar");
-        jPanel1.add(btnActualizarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 190, 182, 54));
+        btnActualizarDieta.setBorder(null);
+        jPanel1.add(btnActualizarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 480, 130, 40));
 
-        btnEliminarDieta.setBackground(new java.awt.Color(118, 99, 242));
-        btnEliminarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnEliminarDieta.setBackground(new java.awt.Color(69, 69, 69));
+        btnEliminarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnEliminarDieta.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarDieta.setText("Eliminar");
-        jPanel1.add(btnEliminarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 270, 182, 54));
+        btnEliminarDieta.setBorder(null);
+        jPanel1.add(btnEliminarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 550, 130, 40));
 
-        btnLimpiarDieta.setBackground(new java.awt.Color(118, 99, 242));
-        btnLimpiarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnLimpiarDieta.setBackground(new java.awt.Color(69, 69, 69));
+        btnLimpiarDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnLimpiarDieta.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiarDieta.setText("Limpiar");
+        btnLimpiarDieta.setBorder(null);
         btnLimpiarDieta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiarDietaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 340, 182, 54));
+        jPanel1.add(btnLimpiarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 620, 130, 40));
 
+        jScrollPane5.setBorder(null);
+
+        jTBdietaCRUD.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        jTBdietaCRUD.setForeground(new java.awt.Color(69, 69, 69));
         jTBdietaCRUD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -190,18 +190,29 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(jTBdietaCRUD);
 
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 1420, 160));
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 1020, 250));
 
-        btnVerClientesDieta.setBackground(new java.awt.Color(118, 99, 242));
-        btnVerClientesDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        btnVerClientesDieta.setBackground(new java.awt.Color(210, 203, 236));
+        btnVerClientesDieta.setFont(new java.awt.Font("Leelawadee UI", 1, 13)); // NOI18N
+        btnVerClientesDieta.setForeground(new java.awt.Color(255, 255, 255));
         btnVerClientesDieta.setText("Clientes");
-        jPanel1.add(btnVerClientesDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 181, 54));
+        btnVerClientesDieta.setBorder(null);
+        jPanel1.add(btnVerClientesDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 280, 150, 40));
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(69, 69, 69));
+        jLabel8.setText("IMPORTANTE: primero revisar a que cliente se le ");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
+
+        btnCerrarSesion.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        btnCerrarSesion.setText("Cerrar Sesion");
+        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 690, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1449, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,10 +225,6 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
     private void btnLimpiarDietaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarDietaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLimpiarDietaActionPerformed
-
-    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,18 +264,18 @@ public class FrmInicioNutricioniosta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizarDieta;
     public javax.swing.JButton btnAgregarDieta;
-    public javax.swing.JButton btnCerrarSesion;
+    public javax.swing.JLabel btnCerrarSesion;
     public javax.swing.JButton btnEliminarDieta;
     public javax.swing.JButton btnLimpiarDieta;
     public javax.swing.JButton btnVerClientesDieta;
     public javax.swing.JComboBox<String> cbIdCliente;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
